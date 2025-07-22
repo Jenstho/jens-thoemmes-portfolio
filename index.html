@@ -1,0 +1,2827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jens Thoemmes - Sociologist & Research Professor. Research on work sociology, time autonomy, labor mobility, and social regulation theory.">
+  <meta name="keywords" content="Jens Thoemmes, sociology, work research, time autonomy, labor mobility, CNRS, Toulouse">
+  <meta name="author" content="Jens Thoemmes">
+  <meta property="og:title" content="Jens Thoemmes - Academic Portfolio">
+  <meta property="og:description" content="Sociologist & Research Professor - Research on work sociology, time autonomy, and labor mobility">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourusername.github.io/jens-thoemmes-portfolio/">
+  <title>Jens Thoemmes - Sociologist & Research Professor</title>
+  <style>
+    :root {
+      --primary: #0891b2;
+      --primary-dark: #0e7490;
+      --bg-main: #ffffff;
+      --bg-secondary: #f9fafb;
+      --bg-tertiary: #f3f4f6;
+      --text-primary: #111827;
+      --text-secondary: #6b7280;
+      --text-tertiary: #9ca3af;
+      --border: #e5e7eb;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    }
+
+    [data-theme="dark"] {
+      --bg-main: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-tertiary: #334155;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-tertiary: #94a3b8;
+      --border: #334155;
+      --shadow: rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: all 0.3s ease;
+    }
+
+    /* Better focus indicators */
+    *:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Skip navigation link */
+    .skip-nav {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 0 0 8px 0;
+      z-index: 2000;
+      transition: top 0.3s ease;
+    }
+
+    .skip-nav:focus {
+      top: 0;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--bg-main);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      padding: 1rem 2rem;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-selector select {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .theme-toggle {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .hero {
+      margin-top: 80px;
+      padding: 4rem 2rem;
+      background: var(--gradient);
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .hero .subtitle {
+      font-size: 1.5rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+
+    .hero .bio {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      opacity: 0.8;
+      line-height: 1.8;
+    }
+
+    .position-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .position-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .main-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+    }
+
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .theme-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .theme-card:hover,
+    .theme-card:focus {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px var(--shadow);
+    }
+
+    .theme-card:hover::before,
+    .theme-card.active::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient);
+    }
+
+    .theme-card.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .theme-card.active .theme-icon {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--primary);
+    }
+
+    .theme-card.active .theme-title,
+    .theme-card.active .theme-description {
+      color: white;
+    }
+
+    .theme-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .theme-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .theme-description {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .publications-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .stat-card:hover,
+    .stat-card:focus {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px var(--shadow);
+    }
+
+    .stat-card.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .stat-card.active .stat-number,
+    .stat-card.active .stat-label {
+      color: white;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .hal-info {
+      background: var(--bg-secondary);
+      border: 1px solid var(--primary);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .hal-info h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .hal-link {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .hal-link:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .filters-container {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .filters-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 300px;
+      padding: 0.875rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-size: 1rem;
+    }
+
+    .filter-select {
+      padding: 0.875rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-main);
+      color: var(--text-primary);
+      min-width: 180px;
+      font-size: 1rem;
+    }
+
+    .active-filters-container {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .active-filter-info {
+      padding: 0.75rem 1rem;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .clear-filter-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .clear-filter-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .publication-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .publication-card:hover {
+      transform: translateX(10px);
+      box-shadow: 0 5px 20px var(--shadow);
+      border-color: var(--primary);
+    }
+
+    .publication-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 1rem;
+    }
+
+    .publication-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      flex: 1;
+      margin-right: 1rem;
+    }
+
+    .publication-year {
+      color: var(--primary);
+      font-weight: 600;
+      background: rgba(8, 145, 178, 0.1);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.875rem;
+    }
+
+    .publication-authors {
+      font-style: italic;
+      color: var(--text-tertiary);
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .publication-meta {
+      display: flex;
+      gap: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .publication-tag {
+      background: var(--bg-tertiary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .publication-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .action-button {
+      background: var(--bg-tertiary);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .action-button:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .results-info {
+      background: var(--bg-tertiary);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: var(--text-secondary);
+    }
+
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #10b981;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px var(--shadow);
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.3s ease;
+      z-index: 3000;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .toast.show.error {
+      background: #dc2626;
+    }
+
+    .toast.show.warning {
+      background: #f59e0b;
+    }
+
+    /* Loading state */
+    .loading {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-secondary);
+    }
+
+    .loading::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-left: 10px;
+      border: 2px solid var(--primary);
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* External link indicators */
+    a[target="_blank"]::after {
+      content: " ↗";
+      font-size: 0.8em;
+      opacity: 0.7;
+    }
+
+    /* Screen reader only text */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* Error states */
+    .error-message {
+      background: #fee;
+      color: #c00;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Improved mobile styles */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero .subtitle { font-size: 1.2rem; }
+      .publications-stats { grid-template-columns: repeat(2, 1fr); }
+      .publication-header { flex-direction: column; gap: 0.5rem; }
+      .nav-container { flex-wrap: wrap; gap: 1rem; }
+      .filters-row { flex-direction: column; align-items: stretch; }
+      .search-input { min-width: 100%; }
+      .themes-grid { grid-template-columns: 1fr; }
+      .publication-card { padding: 1rem; }
+      
+      /* Better mobile navigation */
+      .nav-controls {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        flex-direction: column;
+        background: var(--bg-main);
+        padding: 1rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px var(--shadow);
+        gap: 0.5rem;
+      }
+      
+      .nav-brand {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip navigation link -->
+  <a href="#publications" class="skip-nav">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">Jens Thoemmes</a>
+      <div class="nav-controls">
+        <div class="lang-selector">
+          <span style="margin-right: 0.5rem;">🌐</span>
+          <select id="languageSelect" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 id="heroName">Jens Thoemmes</h1>
+      <p class="subtitle" id="heroSubtitle">Sociologist & Research Professor</p>
+      <p class="bio" id="heroBio">
+        Work sociology, time autonomy, labor mobility, and social regulation theory. 
+        Comparative research across France, Germany, and international contexts.
+      </p>
+      <div class="position-badges">
+        <span class="position-badge">CNRS Senior Researcher</span>
+        <span class="position-badge">CERTOP - Université Toulouse II</span>
+        <span class="position-badge">CFW - Taylor's University Malaysia</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section id="publications" class="main-container">
+    <div class="section-header">
+      <h2 id="publicationsTitle">Selected Publications</h2>
+      <p id="publicationsSubtitle">Research outputs and contributions (1995-2025)</p>
+    </div>
+
+    <!-- Publications Statistics (clickable) -->
+    <div class="publications-stats">
+      <div class="stat-card" onclick="filterByType('book')" tabindex="0" role="button" aria-label="Filter by books">
+        <div class="stat-number" id="booksCount">7</div>
+        <div class="stat-label" id="booksLabel">Books</div>
+      </div>
+      <div class="stat-card" onclick="filterByType('book-chapter')" tabindex="0" role="button" aria-label="Filter by book chapters">
+        <div class="stat-number" id="chaptersCount">22</div>
+        <div class="stat-label" id="chaptersLabel">Book Chapters</div>
+      </div>
+      <div class="stat-card" onclick="filterByType('journal-article')" tabindex="0" role="button" aria-label="Filter by journal articles">
+        <div class="stat-number" id="articlesCount">38</div>
+        <div class="stat-label" id="articlesLabel">Journal Articles</div>
+      </div>
+      <div class="stat-card" onclick="filterByType('conference')" tabindex="0" role="button" aria-label="Filter by conference papers">
+        <div class="stat-number" id="conferenceCount">3</div>
+        <div class="stat-label" id="conferenceLabel">Conference Papers</div>
+      </div>
+      <div class="stat-card" onclick="filterByType('report')" tabindex="0" role="button" aria-label="Filter by reports">
+        <div class="stat-number" id="reportsCount">2</div>
+        <div class="stat-label" id="reportsLabel">Reports</div>
+      </div>
+      <div class="stat-card" onclick="filterByType('preprint')" tabindex="0" role="button" aria-label="Filter by preprints">
+        <div class="stat-number" id="preprintsCount">1</div>
+        <div class="stat-label" id="preprintsLabel">Preprints</div>
+      </div>
+      <div class="stat-card" onclick="filterByType('')" tabindex="0" role="button" aria-label="Show all publications">
+        <div class="stat-number" id="totalCount">73</div>
+        <div class="stat-label" id="totalLabel">Total Publications</div>
+      </div>
+    </div>
+
+    <!-- Research Themes (moved here) -->
+    <div class="section-header">
+      <h2 id="researchTitle">Research Themes</h2>
+      <p id="researchSubtitle">Click on a theme to filter publications</p>
+    </div>
+    <div class="themes-grid">
+      <div class="theme-card" onclick="filterByTheme('Time Autonomy')" tabindex="0" role="button" aria-label="Filter by Time Autonomy theme">
+        <div class="theme-icon">⏰</div>
+        <h3 class="theme-title" data-en="Time Autonomy & Work Organization" data-fr="Autonomie temporelle et organisation du travail" data-de="Zeitautonomie & Arbeitsorganisation">Time Autonomy & Work Organization</h3>
+        <p class="theme-description" data-en="Investigating flexible working arrangements, working time accounts, and work-life balance across different cultural contexts." data-fr="Étude des modalités de travail flexibles, des comptes épargne-temps et de l'équilibre travail-vie privée dans différents contextes culturels." data-de="Untersuchung flexibler Arbeitsmodelle, Arbeitszeitkonten und Work-Life-Balance in verschiedenen kulturellen Kontexten.">
+          Investigating flexible working arrangements, working time accounts, 
+          and work-life balance across different cultural contexts.
+        </p>
+      </div>
+      <div class="theme-card" onclick="filterByTheme('Labor Mobility')" tabindex="0" role="button" aria-label="Filter by Labor Mobility theme">
+        <div class="theme-icon">🌍</div>
+        <h3 class="theme-title" data-en="Labor Mobility & Posted Workers" data-fr="Mobilité du travail et travailleurs détachés" data-de="Arbeitsmobilität & Entsendung">Labor Mobility & Posted Workers</h3>
+        <p class="theme-description" data-en="Studying intra-European labor mobility, particularly Portuguese workers in France's construction sector and social regulation frameworks." data-fr="Étude de la mobilité intra-européenne du travail, notamment des travailleurs portugais dans le secteur de la construction en France et des cadres de régulation sociale." data-de="Untersuchung der innereuropäischen Arbeitsmobilität, insbesondere portugiesischer Arbeitnehmer im französischen Bausektor und sozialer Regulierungsrahmen.">
+          Studying intra-European labor mobility, particularly Portuguese workers 
+          in France's construction sector and social regulation frameworks.
+        </p>
+      </div>
+      <div class="theme-card" onclick="filterByTheme('Remote Work')" tabindex="0" role="button" aria-label="Filter by Remote Work theme">
+        <div class="theme-icon">💻</div>
+        <h3 class="theme-title" data-en="Remote Work & Digital Transformation" data-fr="Télétravail et transformation numérique" data-de="Fernarbeit & digitale Transformation">Remote Work & Digital Transformation</h3>
+        <p class="theme-description" data-en="Analyzing telework negotiations, COVID-19's impact on work patterns, and collective bargaining in the digital age." data-fr="Analyse des négociations sur le télétravail, de l'impact du COVID-19 sur les modes de travail et de la négociation collective à l'ère numérique." data-de="Analyse von Telearbeitsverhandlungen, COVID-19-Auswirkungen auf Arbeitsmuster und Tarifverhandlungen im digitalen Zeitalter.">
+          Analyzing telework negotiations, COVID-19's impact on work patterns, 
+          and collective bargaining in the digital age.
+        </p>
+      </div>
+      <div class="theme-card" onclick="filterByTheme('Industrial Relations')" tabindex="0" role="button" aria-label="Filter by Industrial Relations theme">
+        <div class="theme-icon">🤝</div>
+        <h3 class="theme-title" data-en="Industrial Relations" data-fr="Relations industrielles" data-de="Arbeitsbeziehungen">Industrial Relations</h3>
+        <p class="theme-description" data-en="Comparative studies between France and Germany on company-level negotiations and working time regulations." data-fr="Études comparatives entre la France et l'Allemagne sur les négociations au niveau de l'entreprise et les réglementations du temps de travail." data-de="Vergleichsstudien zwischen Frankreich und Deutschland zu Verhandlungen auf Unternehmensebene und Arbeitszeitregelungen.">
+          Comparative studies between France and Germany on company-level 
+          negotiations and working time regulations.
+        </p>
+      </div>
+      <div class="theme-card" onclick="filterByTheme('Social Regulation')" tabindex="0" role="button" aria-label="Filter by Social Regulation theme">
+        <div class="theme-icon">📊</div>
+        <h3 class="theme-title" data-en="Social Regulation Theory" data-fr="Théorie de la régulation sociale" data-de="Soziale Regulierungstheorie">Social Regulation Theory</h3>
+        <p class="theme-description" data-en="Developing Jean-Daniel Reynaud's theory of autonomous vs control regulation in organizational contexts." data-fr="Développement de la théorie de Jean-Daniel Reynaud sur la régulation autonome versus régulation de contrôle dans les contextes organisationnels." data-de="Entwicklung von Jean-Daniel Reynauds Theorie der autonomen versus Kontrollregulierung in organisatorischen Kontexten.">
+          Developing Jean-Daniel Reynaud's theory of autonomous vs control 
+          regulation in organizational contexts.
+        </p>
+      </div>
+      <div class="theme-card" onclick="filterByTheme('Temporalities')" tabindex="0" role="button" aria-label="Filter by Temporalities theme">
+        <div class="theme-icon">📖</div>
+        <h3 class="theme-title" data-en="Temporalities & Social Sciences" data-fr="Temporalités et sciences sociales" data-de="Temporalitäten & Sozialwissenschaften">Temporalities & Social Sciences</h3>
+        <p class="theme-description" data-en="Examining temporal dimensions of society, work temporalities, and methodological approaches to time in social research." data-fr="Examen des dimensions temporelles de la société, des temporalités du travail et des approches méthodologiques du temps dans la recherche sociale." data-de="Untersuchung zeitlicher Dimensionen der Gesellschaft, Arbeitstemporalitäten und methodologischer Ansätze zur Zeit in der Sozialforschung.">
+          Examining temporal dimensions of society, work temporalities, and 
+          methodological approaches to time in social research.
+        </p>
+      </div>
+      <div class="theme-card" onclick="filterByTheme('Future of Work')" tabindex="0" role="button" aria-label="Filter by Future of Work theme">
+        <div class="theme-icon">🚀</div>
+        <h3 class="theme-title" data-en="Future of Work" data-fr="L'avenir du travail" data-de="Zukunft der Arbeit">Future of Work</h3>
+        <p class="theme-description" data-en="Exploring emerging work patterns, technological disruption, and evolving social regulations in contemporary labor markets." data-fr="Explorer les nouvelles formes de travail, les disruptions technologiques et l'évolution des régulations sociales dans les marchés du travail contemporains." data-de="Erforschung aufkommender Arbeitsmuster, technologischer Umbrüche und sich entwickelnder sozialer Regulierungen in zeitgenössischen Arbeitsmärkten.">
+          Exploring emerging work patterns, technological disruption, and evolving 
+          social regulations in contemporary labor markets.
+        </p>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters-container">
+      <div class="filters-row">
+        <input type="text" class="search-input" placeholder="Search publications..." id="searchInput" aria-label="Search publications">
+        <select class="filter-select" id="yearFilter" aria-label="Filter by year">
+          <option value="">All Years</option>
+        </select>
+        <select class="filter-select" id="langFilter" aria-label="Filter by language">
+          <option value="">All Languages</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="it">Italiano</option>
+        </select>
+      </div>
+      <div class="active-filters-container" id="activeFiltersContainer">
+        <!-- Active filters will be shown here -->
+      </div>
+    </div>
+
+    <!-- HAL Access Info -->
+    <div class="hal-info">
+      <h3>🔓 <span id="halTitle">Access Full Publications</span></h3>
+      <p id="halDescription">More publications are available in open access on HAL Science archives</p>
+      <a href="https://hal.science/search/index/?q=Jens+Thoemmes" target="_blank" rel="noopener noreferrer" class="hal-link" aria-label="View publications on HAL Science (opens in new tab)">
+        <span id="halButton">View on HAL Science →</span>
+      </a>
+    </div>
+
+    <!-- Results Info -->
+    <div class="results-info" id="resultsInfo">
+      Showing all 73 publications
+    </div>
+
+    <!-- Loading Container -->
+    <div id="loadingContainer" class="loading" style="display: none;">
+      Loading publications...
+    </div>
+
+    <!-- Error Container -->
+    <div id="errorContainer" class="error-message" style="display: none;">
+      <span>⚠️</span>
+      <span id="errorMessage"></span>
+    </div>
+    
+    <!-- Publications List -->
+    <div id="publicationsList" class="publications-container">
+      <!-- Publications will be loaded here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 id="contactTitle">Contact</h3>
+        <ul class="footer-links">
+          <li>CERTOP-CNRS</li>
+          <li>Université Toulouse II - Jean Jaurès</li>
+          <li>Centre for Future of Work, Taylor's University, Malaysia</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <script>
+    // Language translations
+    const translations = {
+      en: {
+        heroSubtitle: "Sociologist & Research Professor",
+        heroBio: "Work sociology, time autonomy, labor mobility, and social regulation theory. Comparative research across France, Germany, and international contexts.",
+        researchTitle: "Research Themes",
+        researchSubtitle: "Click on a theme to filter publications",
+        publicationsTitle: "Selected Publications",
+        publicationsSubtitle: "Research outputs and contributions (1995-2025)",
+        booksLabel: "Books",
+        chaptersLabel: "Book Chapters",
+        articlesLabel: "Journal Articles",
+        conferenceLabel: "Conference Papers",
+        reportsLabel: "Reports",
+        preprintsLabel: "Preprints",
+        totalLabel: "Total Publications",
+        halTitle: "Access Full Publications",
+        halDescription: "More publications are available in open access on HAL Science archives",
+        halButton: "View on HAL Science →",
+        contactTitle: "Contact",
+        searchPlaceholder: "Search publications...",
+        allYears: "All Years",
+        allLanguages: "All Languages",
+        filteringByTheme: "Theme: ",
+        filteringByType: "Type: ",
+        clearFilter: "Clear",
+        showingText: "Showing",
+        ofText: "of",
+        publicationsText: "publications",
+        noResultsText: "No publications found matching your criteria.",
+        viewOnHAL: "View on HAL →",
+        viewPDF: "View PDF →",
+        viewOnSSRN: "View on SSRN →",
+        typeLabels: {
+          "book": "Books",
+          "book-chapter": "Book Chapters",
+          "journal-article": "Journal Articles",
+          "conference": "Conference Papers",
+          "report": "Reports",
+          "preprint": "Preprints"
+        }
+      },
+      fr: {
+        heroSubtitle: "Sociologue et Directeur de recherche",
+        heroBio: "Sociologie du travail, autonomie temporelle, mobilité du travail et théorie de la régulation sociale. Recherche comparative entre la France, l'Allemagne et des contextes internationaux.",
+        researchTitle: "Thèmes de recherche",
+        researchSubtitle: "Cliquez sur un thème pour filtrer les publications",
+        publicationsTitle: "Publications sélectionnées",
+        publicationsSubtitle: "Production scientifique et contributions (1995-2025)",
+        booksLabel: "Livres",
+        chaptersLabel: "Chapitres de livres",
+        articlesLabel: "Articles de revues",
+        conferenceLabel: "Communications",
+        reportsLabel: "Rapports",
+        preprintsLabel: "Prépublications",
+        totalLabel: "Total des publications",
+        halTitle: "Accéder aux publications complètes",
+        halDescription: "Plus de publications sont disponibles en accès libre sur HAL Science",
+        halButton: "Voir sur HAL Science →",
+        contactTitle: "Contact",
+        searchPlaceholder: "Rechercher des publications...",
+        allYears: "Toutes les années",
+        allLanguages: "Toutes les langues",
+        filteringByTheme: "Thème : ",
+        filteringByType: "Type : ",
+        clearFilter: "Effacer",
+        showingText: "Affichage de",
+        ofText: "sur",
+        publicationsText: "publications",
+        noResultsText: "Aucune publication trouvée correspondant à vos critères.",
+        viewOnHAL: "Voir sur HAL →",
+        viewPDF: "Voir le PDF →",
+        viewOnSSRN: "Voir sur SSRN →",
+        typeLabels: {
+          "book": "Livres",
+          "book-chapter": "Chapitres de livres",
+          "journal-article": "Articles de revues",
+          "conference": "Communications",
+          "report": "Rapports",
+          "preprint": "Prépublications"
+        }
+      },
+      de: {
+        heroSubtitle: "Soziologe und Forschungsprofessor",
+        heroBio: "Arbeitssoziologie, Zeitautonomie, Arbeitsmobilität und soziale Regulierungstheorie. Vergleichende Forschung in Frankreich, Deutschland und internationalen Kontexten.",
+        researchTitle: "Forschungsthemen",
+        researchSubtitle: "Klicken Sie auf ein Thema, um Publikationen zu filtern",
+        publicationsTitle: "Ausgewählte Publikationen",
+        publicationsSubtitle: "Forschungsergebnisse und Beiträge (1995-2025)",
+        booksLabel: "Bücher",
+        chaptersLabel: "Buchkapitel",
+        articlesLabel: "Zeitschriftenartikel",
+        conferenceLabel: "Konferenzbeiträge",
+        reportsLabel: "Berichte",
+        preprintsLabel: "Vorabdrucke",
+        totalLabel: "Gesamtpublikationen",
+        halTitle: "Zugang zu vollständigen Publikationen",
+        halDescription: "Weitere Publikationen sind im Open Access auf HAL Science verfügbar",
+        halButton: "Auf HAL Science ansehen →",
+        contactTitle: "Kontakt",
+        searchPlaceholder: "Publikationen suchen...",
+        allYears: "Alle Jahre",
+        allLanguages: "Alle Sprachen",
+        filteringByTheme: "Thema: ",
+        filteringByType: "Typ: ",
+        clearFilter: "Löschen",
+        showingText: "Anzeige",
+        ofText: "von",
+        publicationsText: "Publikationen",
+        noResultsText: "Keine Publikationen gefunden, die Ihren Kriterien entsprechen.",
+        viewOnHAL: "Auf HAL ansehen →",
+        viewPDF: "PDF ansehen →",
+        viewOnSSRN: "Auf SSRN ansehen →",
+        typeLabels: {
+          "book": "Bücher",
+          "book-chapter": "Buchkapitel",
+          "journal-article": "Zeitschriftenartikel",
+          "conference": "Konferenzbeiträge",
+          "report": "Berichte",
+          "preprint": "Vorabdrucke"
+        }
+      }
+    };
+
+    // Complete publications data
+    const publicationsData = {
+      books: [
+        {
+          id: 'pub_book_1',
+          year: "2024",
+          title: "Time Autonomy and Work in France, Germany, and China",
+          authors: "Thoemmes, J.",
+          publisher: "Lexington Books / Rowman & Littlefield",
+          isbn: "978-1-66696-908-5",
+          url: "https://rowman.com/ISBN/9781666969085",
+          language: "en",
+          type: "book",
+          tags: ["Time Autonomy", "Comparative Studies", "Work Organization"],
+          themes: ["Time Autonomy", "Comparative Studies"]
+        },
+        {
+          id: 'pub_book_2',
+          year: "2024",
+          title: "La seconde autonomie. Temps et travail en France, Allemagne et en Chine",
+          authors: "Thoemmes, J.",
+          publisher: "Octares Editions",
+          pages: "1-238",
+          url: "https://hal.science/hal-04567108",
+          language: "fr",
+          type: "book",
+          tags: ["Time Autonomy", "Comparative Studies", "Work Organization"],
+          themes: ["Time Autonomy", "Comparative Studies"]
+        },
+        {
+          id: 'pub_book_3',
+          year: "2021",
+          title: "Regelungsstrukturen und Praxis von Arbeitszeitkonten Deutschland und Frankreich",
+          authors: "Giotto, T., Seifert, H., & Thoemmes, J.",
+          publisher: "Study der Hans-Böckler-Stiftung",
+          pages: "84 pages",
+          url: "https://hal.science/hal-03432623",
+          language: "de",
+          type: "book",
+          tags: ["Working Time", "Comparative Studies", "Industrial Relations"],
+          themes: ["Time Autonomy", "Industrial Relations"]
+        },
+        {
+          id: 'pub_book_4',
+          year: "2020",
+          title: "Posted work: informality and social regulation",
+          authors: "Thoemmes, J.",
+          publisher: "TAO Digital Library, Alma Mater Studiorum - Università di Bologna",
+          url: "https://hal.science/hal-03095610",
+          language: "en",
+          type: "book",
+          tags: ["Posted Workers", "Social Regulation", "Labor Mobility"],
+          themes: ["Labor Mobility", "Social Regulation"]
+        },
+        {
+          id: 'pub_book_5',
+          year: "2013",
+          title: "Organizations and working time standards: a comparison of negotiations in Europe",
+          authors: "Thoemmes, J.",
+          publisher: "Routledge",
+          pages: "182",
+          url: "https://hal.science/hal-00942184",
+          language: "en",
+          type: "book",
+          tags: ["Working Time", "Europe", "Negotiations"],
+          themes: ["Time Autonomy", "Industrial Relations"]
+        },
+        {
+          id: 'pub_book_6',
+          year: "2010",
+          title: "La négociation du temps de travail: une comparaison France-Allemagne",
+          authors: "Thoemmes, J.",
+          publisher: "LGDJ-Lextenso",
+          series: "Droit et société. Recherches et travaux, ISSN 1289-7906",
+          pages: "184",
+          url: "https://hal.science/hal-00942045",
+          language: "fr",
+          type: "book",
+          tags: ["Working Time", "France", "Germany", "Collective Bargaining"],
+          themes: ["Time Autonomy", "Comparative Studies", "Industrial Relations"]
+        },
+        {
+          id: 'pub_book_7',
+          year: "2000",
+          title: "Vers la fin du temps de travail?",
+          authors: "Thoemmes, J.",
+          publisher: "Presses Universitaires de France, Le Travail Humain",
+          pages: "225 pages",
+          url: "https://hal.science/hal-00936455",
+          language: "fr",
+          type: "book",
+          tags: ["Working Time", "Work Organization", "Social Theory"],
+          themes: ["Time Autonomy", "Temporalities"]
+        }
+      ],
+      bookChapters: [
+        {
+          id: 'pub_ch_1',
+          year: "2025",
+          title: "L'autonomie temporelle à l'épreuve des comptes épargne-temps",
+          authors: "Thoemmes, J.",
+          inBook: "Les frontières du travail: déplacements, brouillages et recomposition",
+          editors: "N. Le Feuvre & M. Perrenoud (Eds.)",
+          pages: "319-331",
+          publisher: "Octares",
+          url: "https://shs.hal.science/halshs-05091388",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Time Autonomy", "Working Time Accounts"],
+          themes: ["Time Autonomy"]
+        },
+        {
+          id: 'pub_ch_2',
+          year: "2023",
+          title: "« Depuis la pandémie, on est tous passé en télétravail. »",
+          authors: "Thoemmes, J.",
+          inBook: "Idées reçues sur le travail",
+          editors: "A.-M. Dujarier (Ed.)",
+          pages: "221-222",
+          publisher: "Le Cavalier Bleu",
+          url: "https://hal.science/hal-04567109",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Remote Work", "COVID-19", "Digital Transformation"],
+          themes: ["Remote Work"]
+        },
+        {
+          id: 'pub_ch_3',
+          year: "2019",
+          title: "Temps",
+          authors: "Thoemmes, J.",
+          inBook: "Les zones grises de l'emploi",
+          editors: "M.-C. Bureau, A. Corsani, O. Giraud, & F. Rey (Eds.)",
+          pages: "523-532",
+          publisher: "Teseo",
+          url: "https://hal.science/hal-03095607",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Temporalities", "Work Organization"],
+          themes: ["Temporalities"]
+        },
+        {
+          id: 'pub_ch_4',
+          year: "2017",
+          title: "Du point de vue de la sociologie du travail",
+          authors: "Thoemmes, J.",
+          inBook: "Débat sur l'analyse du travail pour la prévention",
+          editors: "B. Maggi & G. Rulli (Eds.)",
+          publisher: "TAO Digital Library",
+          url: "https://hal.science/hal-03482166",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Work Sociology", "Prevention"],
+          themes: ["Work Sociology"]
+        },
+        {
+          id: 'pub_ch_5',
+          year: "2017",
+          title: "From the point of view of work sociology",
+          authors: "Thoemmes, J.",
+          inBook: "Debate on work analysis for prevention",
+          editors: "B. Maggi & G. Rulli (Eds.)",
+          publisher: "TAO Digital Library",
+          url: "https://hal.science/hal-03095608",
+          language: "en",
+          type: "book-chapter",
+          tags: ["Work Sociology", "Prevention"],
+          themes: ["Work Sociology"]
+        },
+        {
+          id: 'pub_ch_6',
+          year: "2015",
+          title: "Les régulations du travail et des temps : réponses et perspectives",
+          authors: "Thoemmes, J.",
+          inBook: "Temps de travail et régulation sociale",
+          editors: "J. Thoemmes (Ed.)",
+          pages: "70-82",
+          publisher: "TAO Digital Library",
+          url: "https://hal.science/hal-01240762",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Social Regulation", "Working Time"],
+          themes: ["Social Regulation", "Time Autonomy"]
+        },
+        {
+          id: 'pub_ch_7',
+          year: "2015",
+          title: "Le regolazioni del lavoro e dei tempi: risposte e prospettive",
+          authors: "Thoemmes, J.",
+          inBook: "Tempo di lavoro e regolazione sociale",
+          editors: "J. Thoemmes (Ed.)",
+          pages: "69-80",
+          publisher: "TAO Digital Library",
+          url: "https://hal.science/hal-01240792",
+          language: "it",
+          type: "book-chapter",
+          tags: ["Social Regulation", "Working Time"],
+          themes: ["Social Regulation", "Time Autonomy"]
+        },
+        {
+          id: 'pub_ch_8',
+          year: "2015",
+          title: "Tempo, lavoro e regolazione: verso il processo d'azione a più livelli",
+          authors: "Thoemmes, J.",
+          inBook: "Tempo di lavoro e regolazione sociale",
+          editors: "J. Thoemmes (Ed.)",
+          pages: "6-17",
+          publisher: "TAO Digital Library",
+          url: "https://hal.science/hal-01240747",
+          language: "it",
+          type: "book-chapter",
+          tags: ["Social Regulation", "Working Time", "Multi-level Action"],
+          themes: ["Social Regulation", "Time Autonomy"]
+        },
+        {
+          id: 'pub_ch_9',
+          year: "2015",
+          title: "Temps, travail et régulations : en quête du processus d'action multi-scalaire",
+          authors: "Thoemmes, J.",
+          inBook: "Temps de travail et régulation sociale",
+          editors: "J. Thoemmes (Ed.)",
+          pages: "6-18",
+          publisher: "TAO Digital Library",
+          url: "https://hal.science/hal-01240230",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Social Regulation", "Working Time", "Multi-scale Action"],
+          themes: ["Social Regulation", "Time Autonomy"]
+        },
+        {
+          id: 'pub_ch_10',
+          year: "2014",
+          title: "Libérer les temporalités de l'emprise des marchés: une question de théorie?",
+          authors: "Thoemmes, J.",
+          inBook: "Temps de travail et travail du temps",
+          editors: "S. Monchatre & B. Woehl (Eds.)",
+          publisher: "Publications de la Sorbonne",
+          url: "https://hal.science/hal-01088268",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Temporalities", "Market Theory"],
+          themes: ["Temporalities", "Social Regulation"]
+        },
+        {
+          id: 'pub_ch_11',
+          year: "2013",
+          title: "Les sciences sociales face aux temporalités",
+          authors: "Dubar, C., & Thoemmes, J.",
+          inBook: "Les temporalités dans les sciences sociales",
+          editors: "C. Dubar & J. Thoemmes (Eds.)",
+          pages: "7-12",
+          publisher: "Octarès",
+          url: "https://hal.science/hal-00942166",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Temporalities", "Social Sciences"],
+          themes: ["Temporalities"]
+        },
+        {
+          id: 'pub_ch_12',
+          year: "2012",
+          title: "Les temporalités et la performance dans l'entreprise. Le cas des cadres-professionnels",
+          authors: "Thoemmes, J.",
+          inBook: "Performance organisationnelle et temps sociaux",
+          editors: "D.-G. Tremblay (Ed.)",
+          pages: "129-144",
+          publisher: "Presses universitaires du Québec",
+          url: "https://hal.science/hal-00942161",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Performance", "Professional Staff", "Temporalities"],
+          themes: ["Work Organization", "Temporalities"]
+        },
+        {
+          id: 'pub_ch_13',
+          year: "2011",
+          title: "La négociation du temps de travail",
+          authors: "Thoemmes, J.",
+          inBook: "Interpréter l'agir : un défi théorique",
+          editors: "B. Maggi (Ed.)",
+          pages: "259-278",
+          publisher: "Presses universitaires de France",
+          url: "https://hal.science/hal-00942077",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Working Time", "Negotiation"],
+          themes: ["Industrial Relations", "Time Autonomy"]
+        },
+        {
+          id: 'pub_ch_14',
+          year: "2011",
+          title: "La negoziazione del tempo di lavoro",
+          authors: "Thoemmes, J.",
+          inBook: "Interpretare l'agire: una sfida teorica",
+          editors: "B. Maggi (Ed.)",
+          pages: "219-234",
+          publisher: "Carocci",
+          url: "https://hal.science/hal-00942095",
+          language: "it",
+          type: "book-chapter",
+          tags: ["Working Time", "Negotiation"],
+          themes: ["Industrial Relations", "Time Autonomy"]
+        },
+        {
+          id: 'pub_ch_15',
+          year: "2010",
+          title: "Increasing use of 'market' concepts in negotiations and contextualising factors",
+          authors: "Thoemmes, J.",
+          inBook: "Globalization and Precarious Forms of Production and Employment",
+          editors: "C. Thornley, S. Jefferys, & B. Appay (Eds.)",
+          pages: "147-163",
+          publisher: "Edward Elgar Publishing",
+          url: "https://hal.science/hal-00942020",
+          language: "en",
+          type: "book-chapter",
+          tags: ["Globalization", "Negotiation"],
+          themes: ["Industrial Relations", "Globalization"]
+        },
+        {
+          id: 'pub_ch_16',
+          year: "2008",
+          title: "Le travail des sapeurs-pompiers dans la crise : le cas de l'explosion « AZF »",
+          authors: "Kanzari, R., & Thoemmes, J.",
+          inBook: "La catastrophe d'AZF : l'apport des sciences humaines et sociales",
+          editors: "G. de Terssac & I. Gaillard (Eds.)",
+          pages: "61-75",
+          publisher: "Lavoisier",
+          url: "https://hal.science/hal-00941960",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Crisis Management", "Firefighters", "AZF"],
+          themes: ["Work Organization", "Crisis Management"]
+        },
+        {
+          id: 'pub_ch_17',
+          year: "2006",
+          title: "Temporalités sociales: nouveaux enjeux, nouvelles démarches d'analyse",
+          authors: "Thoemmes, J., & de Terssac, G.",
+          inBook: "Les temporalités sociales : repères méthodologiques",
+          editors: "J. Thoemmes & G. De Terssac (Eds.)",
+          pages: "3-12",
+          publisher: "Octarès",
+          url: "https://hal.science/hal-01852078",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Temporalities", "Social Analysis", "Methodology"],
+          themes: ["Temporalities", "Methodology"]
+        },
+        {
+          id: 'pub_ch_18',
+          year: "2003",
+          title: "20 ans de comparaison France-Allemagne : de l'effet sociétal à l'analyse de l'articulation des régulations globales et locales",
+          authors: "Labit, A., & Thoemmes, J.",
+          inBook: "Stratégies de la comparaison internationale",
+          editors: "M. Lallement & J. Spurk (Eds.)",
+          pages: "23-38",
+          publisher: "Editions du CNRS",
+          url: "https://hal.science/hal-00936467",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Comparative Studies", "France-Germany", "Regulations"],
+          themes: ["Comparative Studies", "Industrial Relations"]
+        },
+        {
+          id: 'pub_ch_19',
+          year: "2001",
+          title: "Négociation du temps de travail et régulations intermédiaires : le cas de Volkswagen",
+          authors: "Thoemmes, J.",
+          inBook: "L'action publique négociée: approches à partir des \"35 heures\" France-Europe",
+          editors: "G. Groux (Ed.)",
+          pages: "127-143",
+          publisher: "Harmattan",
+          url: "https://hal.science/hal-00936461",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Working Time", "Volkswagen", "Public Policy"],
+          themes: ["Time Autonomy", "Industrial Relations"]
+        },
+        {
+          id: 'pub_ch_20',
+          year: "2000",
+          title: "Discipline temporelle, division sexuelle du travail et genre",
+          authors: "de Terssac, G., Flautre, A., Le Feuvre, N., Thébault, C., & Thoemmes, J.",
+          inBook: "Où va le temps de travail ?",
+          editors: "G. de Terssac & D.-G. Tremblay (Eds.)",
+          pages: "185-202",
+          publisher: "Octarès",
+          url: "https://hal.science/hal-00941188",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Gender", "Working Time", "Sexual Division"],
+          themes: ["Gender Studies", "Time Autonomy"]
+        },
+        {
+          id: 'pub_ch_21',
+          year: "1998",
+          title: "La mise en place du compte épargne temps : modalités et enjeux",
+          authors: "de Terssac, G., Thoemmes, J., Flautre, A., & Thébault, C.",
+          inBook: "La négociation collective en 1997",
+          pages: "317-334",
+          publisher: "La Documentation Française",
+          url: "https://hal.science/hal-00936381",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Time Accounts", "Collective Bargaining"],
+          themes: ["Time Autonomy", "Industrial Relations"]
+        },
+        {
+          id: 'pub_ch_22',
+          year: "1997",
+          title: "La construction des arrangements temporels : une analyse d'accord sur 11 ans",
+          authors: "Thoemmes, J., & de Terssac, G.",
+          inBook: "Le temps de travail : nouveaux enjeux, nouvelles normes, nouvelles mesures",
+          editors: "D. Meulders, F. Michon, & G. Bosch (Eds.)",
+          pages: "217-244",
+          publisher: "Editons du Dulbea",
+          url: "https://hal.science/hal-00936377",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Working Time", "Temporal Arrangements", "Agreements"],
+          themes: ["Time Autonomy", "Industrial Relations"]
+        }
+      ],
+      journalArticles: [
+        {
+          id: 'pub_art_1',
+          year: "2024",
+          title: "Autonomie temporelle : enjeux théoriques",
+          authors: "Thoemmes, J.",
+          journal: "Swiss Journal of Sociology",
+          volume: "50(1)",
+          pages: "7-26",
+          url: "https://hal.science/hal-04562230",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Time Autonomy", "Social Theory"],
+          themes: ["Time Autonomy", "Social Theory"]
+        },
+        {
+          id: 'pub_art_2',
+          year: "2024",
+          title: "Dynamiques du court et du long terme dans l'action publique : le télétravail en France",
+          authors: "Thoemmes, J.",
+          journal: "Action publique. Recherche et pratiques",
+          volume: "(22)",
+          pages: "21-29",
+          url: "https://hal.science/hal-04854529",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Remote Work", "Public Policy", "France"],
+          themes: ["Remote Work", "Public Policy"]
+        },
+        {
+          id: 'pub_art_3',
+          year: "2024",
+          title: "Télétravail: de l'exception à la règle",
+          authors: "Thoemmes, J.",
+          journal: "La Revue des Conditions de Travail",
+          volume: "(14)",
+          pages: "27-35",
+          url: "https://hal.science/hal-04567104",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Remote Work", "Work Organization"],
+          themes: ["Remote Work"]
+        },
+        {
+          id: 'pub_art_4',
+          year: "2024",
+          title: "Negotiating Telework in France: Collective Bargaining Amidst the COVID-19 Pandemic",
+          authors: "Thoemmes, J.",
+          journal: "International Journal of Business and Applied Social Science",
+          volume: "10(5)",
+          pages: "1-11",
+          url: "https://hal.science/hal-04619772",
+          language: "en",
+          type: "journal-article",
+          tags: ["Remote Work", "Collective Bargaining", "COVID-19"],
+          themes: ["Remote Work", "Industrial Relations"]
+        },
+        {
+          id: 'pub_art_5',
+          year: "2023",
+          title: "La négociation du télétravail : dynamique, variété et fragilité",
+          authors: "Giotto, T., & Thoemmes, J.",
+          journal: "Négociations",
+          volume: "38(2)",
+          pages: "35-53",
+          url: "https://hal.science/hal-04205338",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Remote Work", "Collective Bargaining"],
+          themes: ["Remote Work", "Industrial Relations"]
+        },
+        {
+          id: 'pub_art_6',
+          year: "2023",
+          title: "Le paradoxe du télétravail",
+          authors: "Thoemmes, J.",
+          journal: "Les Mondes du travail",
+          volume: "(30)",
+          pages: "119-136",
+          url: "https://hal.science/hal-04206134",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Remote Work", "Work Organization"],
+          themes: ["Remote Work"]
+        },
+        {
+          id: 'pub_art_7',
+          year: "2022",
+          title: "Social Times of Cooks in France",
+          authors: "Laporte, C., & Thoemmes, J.",
+          journal: "Social Sciences",
+          volume: "11(3)",
+          pages: "109",
+          url: "https://hal.science/hal-03901805",
+          language: "en",
+          type: "journal-article",
+          tags: ["Social Times", "Cooks", "France"],
+          themes: ["Temporalities", "Work Organization"]
+        },
+        {
+          id: 'pub_art_8',
+          year: "2022",
+          title: "Les comptes épargne-temps en France et en Allemagne. Une analyse comparative des accords d'entreprise",
+          authors: "Giotto, T., & Thoemmes, J.",
+          journal: "Socio-économie du travail",
+          volume: "2021-1(9)",
+          pages: "83-116",
+          url: "https://hal.science/hal-03476483",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Time Accounts", "Comparative Studies", "Enterprise Agreements"],
+          themes: ["Time Autonomy", "Comparative Studies"]
+        },
+        {
+          id: 'pub_art_9',
+          year: "2022",
+          title: "Company bargaining and working time accounts in France and Germany",
+          authors: "Thoemmes, J., & Giotto, T.",
+          journal: "Interventions Economiques : Papers in Political Economy",
+          volume: "(68)",
+          url: "https://hal.science/hal-03749981",
+          language: "en",
+          type: "journal-article",
+          tags: ["Working Time", "Comparative Studies", "Industrial Relations"],
+          themes: ["Time Autonomy", "Industrial Relations", "Comparative Studies"]
+        },
+        {
+          id: 'pub_art_10',
+          year: "2022",
+          title: "Le travail détaché: un système autonome",
+          authors: "Thoemmes, J.",
+          journal: "Revue Européenne des Migrations Internationales",
+          volume: "38(1-2)",
+          pages: "261-284",
+          url: "https://hal.science/hal-03748204",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Posted Workers", "Labor Mobility", "Social Regulation"],
+          themes: ["Labor Mobility", "Social Regulation"]
+        },
+        {
+          id: 'pub_art_11',
+          year: "2021",
+          title: "Temps et migrations",
+          authors: "Mercier, D., Chiffoleau, S., & Thoemmes, J.",
+          journal: "Temporalités : revue de sciences sociales et humaines",
+          volume: "(33)",
+          url: "https://shs.hal.science/halshs-03290005",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Time", "Migrations", "Temporalities"],
+          themes: ["Temporalities", "Labor Mobility"]
+        },
+        {
+          id: 'pub_art_12',
+          year: "2020",
+          title: "Arbeitszeitkonten in Deutschland und Frankreich. Eine vergleichende Analyse von Betriebsvereinbarungen",
+          authors: "Seifert, H., & Thoemmes, J.",
+          journal: "Industrielle Beziehungen -The German Journal of Industrial Relations",
+          volume: "27(1)",
+          pages: "45-68",
+          url: "https://hal.science/hal-03095609",
+          language: "de",
+          type: "journal-article",
+          tags: ["Working Time Accounts", "Germany", "France", "Enterprise Agreements"],
+          themes: ["Time Autonomy", "Comparative Studies"]
+        },
+        {
+          id: 'pub_art_13',
+          year: "2020",
+          title: "The continuity of social times in China. Case studies of two manufacturing industries",
+          authors: "Zhao, W., & Thoemmes, J.",
+          journal: "Temporalités : revue de sciences sociales et humaines",
+          volume: "(31-32)",
+          url: "https://hal.science/hal-03432581",
+          language: "en",
+          type: "journal-article",
+          tags: ["Social Times", "China", "Manufacturing"],
+          themes: ["Temporalities", "Comparative Studies"]
+        },
+        {
+          id: 'pub_art_14',
+          year: "2017",
+          title: "Circuler entre chantiers et pays : enquête sur les travailleurs détachés portugais dans le BTP en France",
+          authors: "Oliveira da silva, D., & Thoemmes, J.",
+          journal: "SociologieS",
+          url: "https://hal.science/hal-01672865",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Posted Workers", "Portuguese Workers", "Construction"],
+          themes: ["Labor Mobility", "Social Regulation"]
+        },
+        {
+          id: 'pub_art_15',
+          year: "2017",
+          title: "Temporalités, réseaux et mobilités transnationales des travailleurs saisonniers en Andorre et des travailleurs détachés portugais en France",
+          authors: "Thoemmes, J., & Oliveira da silva, D.",
+          journal: "Espace Populations Sociétés",
+          volume: "(2017-2)",
+          url: "https://hal.science/hal-01672860",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Temporalities", "Transnational Mobility", "Seasonal Workers"],
+          themes: ["Temporalities", "Labor Mobility"]
+        },
+        {
+          id: 'pub_art_16',
+          year: "2017",
+          title: "Le compte épargne temps: mieux vivre ou travailler plus?",
+          authors: "Giotto, T., & Thoemmes, J.",
+          journal: "Nouvelle Revue du travail",
+          volume: "(11)",
+          url: "https://hal.science/hal-01672858",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Time Accounts", "Work-Life Balance"],
+          themes: ["Time Autonomy"]
+        },
+        {
+          id: 'pub_art_17',
+          year: "2016",
+          title: "Three Worlds of Professional and Managerial Staff in France",
+          authors: "Thoemmes, J.",
+          journal: "Relations Industrielles / Industrial Relations",
+          volume: "71(2)",
+          pages: "299-332",
+          url: "https://hal.science/hal-01350605",
+          language: "en",
+          type: "journal-article",
+          tags: ["Professional Staff", "France", "Work Organization"],
+          themes: ["Work Organization", "Industrial Relations"]
+        },
+        {
+          id: 'pub_art_18',
+          year: "2016",
+          title: "La capitalisation du temps de travail",
+          authors: "Giotto, T., & Thoemmes, J.",
+          journal: "Cahiers de recherche sociologique",
+          volume: "(59-60)",
+          pages: "113-134",
+          url: "https://hal.science/hal-01350600",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Working Time", "Capitalization"],
+          themes: ["Time Autonomy"]
+        },
+        {
+          id: 'pub_art_19',
+          year: "2015",
+          title: "Le tri sélectif des déchets : entre difficultés et potentialités d'une nouvelle profession industrielle",
+          authors: "Chay, C., & Thoemmes, J.",
+          journal: "SociologieS",
+          url: "https://hal.science/hal-01240171",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Waste Management", "Industrial Profession"],
+          themes: ["Work Organization"]
+        },
+        {
+          id: 'pub_art_20',
+          year: "2014",
+          title: "Le travail détaché. Le cas des salariés portugais du secteur de la construction en France",
+          authors: "Thoemmes, J.",
+          journal: "Les Mondes du travail",
+          volume: "(14)",
+          pages: "39-55",
+          url: "https://hal.science/hal-01088250",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Posted Workers", "Portuguese Workers", "Construction"],
+          themes: ["Labor Mobility"]
+        },
+        {
+          id: 'pub_art_21',
+          year: "2013",
+          title: "L'histoire oubliée des horaires individualisés : de la désynchronisation choisie à la flexibilité pour l'entreprise",
+          authors: "Thoemmes, J.",
+          journal: "Revue Française de Socio-Economie",
+          volume: "11(1)",
+          pages: "35-53",
+          url: "https://hal.science/hal-00942181",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Individualized Schedules", "Flexibility"],
+          themes: ["Time Autonomy"]
+        },
+        {
+          id: 'pub_art_22',
+          year: "2013",
+          title: "De la sérénité à la résistance : trois mondes de cadres",
+          authors: "Thoemmes, J., Escarboutel, M., & Kanzari, R.",
+          journal: "Economies et sociétés. Série AB, Économie du travail",
+          volume: "(35)",
+          pages: "725-757",
+          url: "https://hal.science/hal-00942191",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Management", "Professional Staff", "Resistance"],
+          themes: ["Work Organization"]
+        },
+        {
+          id: 'pub_art_23',
+          year: "2013",
+          title: "Hochqualifizierte Angestellte in Frankreich: Gelassenheit - Individualismus - Widerstand",
+          authors: "Thoemmes, J.",
+          journal: "Leviathan",
+          volume: "41(3)",
+          pages: "479-504",
+          url: "https://hal.science/hal-00942175",
+          language: "de",
+          type: "journal-article",
+          tags: ["Highly Qualified Employees", "France", "Individualism"],
+          themes: ["Work Organization"]
+        },
+        {
+          id: 'pub_art_24',
+          year: "2012",
+          title: "La fabrique des normes temporelles du travail",
+          authors: "Thoemmes, J.",
+          journal: "Nouvelle Revue du travail",
+          volume: "1",
+          url: "https://hal.science/hal-00942145",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Temporal Norms", "Work"],
+          themes: ["Time Autonomy"]
+        },
+        {
+          id: 'pub_art_25',
+          year: "2012",
+          title: "La mesure des temps des cadres : une solution pour sortir des difficultés professionnelles ?",
+          authors: "Thoemmes, J.",
+          journal: "Temporalités : revue de sciences sociales et humaines",
+          volume: "(16)",
+          url: "https://hal.science/hal-00942154",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Time Measurement", "Management"],
+          themes: ["Time Autonomy", "Work Organization"]
+        },
+        {
+          id: 'pub_art_26',
+          year: "2011",
+          title: "Betriebsverhandlungen in Frankreich : die Bevollmächtigung von nicht gewerkschaftlich organisierten Mitarbeitern",
+          authors: "Thoemmes, J.",
+          journal: "Industrielle Beziehungen -The German Journal of Industrial Relations",
+          volume: "18(4)",
+          pages: "262-289",
+          url: "https://hal.science/hal-00942071",
+          language: "de",
+          type: "journal-article",
+          tags: ["Enterprise Negotiations", "France", "Trade Unions"],
+          themes: ["Industrial Relations"]
+        },
+        {
+          id: 'pub_art_27',
+          year: "2011",
+          title: "Temporalités des cadres et malaise au travail",
+          authors: "Thoemmes, J., Kanzari, R., & Escarboutel, M.",
+          journal: "Interventions Economiques : Papers in Political Economy",
+          volume: "(43)",
+          url: "https://hal.science/hal-00942089",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Management", "Work Temporalities", "Work Malaise"],
+          themes: ["Work Organization", "Temporalities"]
+        },
+        {
+          id: 'pub_art_28',
+          year: "2009",
+          title: "Negociation et régulation intermédiaire: Le cas du mandatement syndical",
+          authors: "Thoemmes, J.",
+          journal: "Revue française de sociologie",
+          volume: "50(4)",
+          pages: "817-841",
+          url: "https://hal.science/hal-00942000",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Negotiation", "Trade Unions", "Social Regulation"],
+          themes: ["Industrial Relations", "Social Regulation"]
+        },
+        {
+          id: 'pub_art_29',
+          year: "2009",
+          title: "Du temps de travail au temps des marchés",
+          authors: "Thoemmes, J.",
+          journal: "Temporalités : revue de sciences sociales et humaines",
+          volume: "(10)",
+          url: "https://hal.science/hal-00941445",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Working Time", "Market Time"],
+          themes: ["Time Autonomy", "Temporalities"]
+        },
+        {
+          id: 'pub_art_30',
+          year: "2009",
+          title: "Les temporalités sociales : mise en marché et conflits",
+          authors: "Thoemmes, J.",
+          journal: "Temporalités : revue de sciences sociales et humaines",
+          url: "https://hal.science/hal-00941491",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Social Temporalities", "Market", "Conflicts"],
+          themes: ["Temporalities", "Social Regulation"]
+        },
+        {
+          id: 'pub_art_31',
+          year: "2008",
+          title: "Sociologie du travail et critique du temps industriel",
+          authors: "Thoemmes, J.",
+          journal: "Temporalités : revue de sciences sociales et humaines",
+          volume: "(8)",
+          url: "https://hal.science/hal-00941437",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Work Sociology", "Industrial Time"],
+          themes: ["Work Sociology", "Temporalities"]
+        },
+        {
+          id: 'pub_art_32',
+          year: "2008",
+          title: "L'évolution d'une règle d'organisation sur dix ans : l'accord collectif chez un constructeur d'automobiles en Allemagne",
+          authors: "Thoemmes, J.",
+          journal: "Sociologie du Travail",
+          volume: "50(2)",
+          pages: "219-236",
+          url: "https://hal.science/hal-00941434",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Organizational Rules", "Automotive", "Germany"],
+          themes: ["Work Organization", "Industrial Relations"]
+        },
+        {
+          id: 'pub_art_33',
+          year: "2004",
+          title: "Régulation politique et régulation d'usage dans le temps de travail",
+          authors: "de Terssac, G., Thoemmes, J., & Flautre, A.",
+          journal: "Le travail humain",
+          volume: "67(2)",
+          pages: "135-154",
+          url: "https://hal.science/hal-00936469",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Political Regulation", "Usage Regulation", "Working Time"],
+          themes: ["Social Regulation", "Time Autonomy"]
+        },
+        {
+          id: 'pub_art_34',
+          year: "2001",
+          title: "Le temps de travail entre deux pôles: protection de l'emploi et subsistance",
+          authors: "Thoemmes, J.",
+          journal: "Humanisme et entreprise",
+          volume: "(249)",
+          pages: "85-94",
+          url: "https://hal.science/hal-03095598",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Working Time", "Employment Protection", "Subsistence"],
+          themes: ["Time Autonomy", "Social Policy"]
+        },
+        {
+          id: 'pub_art_35',
+          year: "1999",
+          title: "La construction du temps de travail: normes sociales ou normes juridiques?",
+          authors: "Thoemmes, J.",
+          journal: "Droit et Société : Revue internationale de théorie du droit et de sociologie juridique",
+          volume: "(41)",
+          pages: "15-32",
+          url: "https://hal.science/hal-00941111",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Working Time Construction", "Social Norms", "Legal Norms"],
+          themes: ["Time Autonomy", "Social Regulation"]
+        },
+        {
+          id: 'pub_art_36',
+          year: "1998",
+          title: "La négociation du temps de travail: l'emploi en jeu",
+          authors: "Morin, M.-L., de Terssac, G., & Thoemmes, J.",
+          journal: "Sociologie du Travail",
+          volume: "40(2)",
+          pages: "191-207",
+          url: "https://hal.science/hal-00937155",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Working Time Negotiation", "Employment"],
+          themes: ["Industrial Relations", "Time Autonomy"]
+        },
+        {
+          id: 'pub_art_37',
+          year: "1997",
+          title: "La négociation du temps de travail et les composantes du référentiel temporel",
+          authors: "Thoemmes, J., & de Terssac, G.",
+          journal: "Loisir et Société / Society and Leisure",
+          volume: "20(1)",
+          pages: "51-72",
+          url: "https://hal.science/hal-00933571",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Working Time Negotiation", "Temporal Framework"],
+          themes: ["Time Autonomy", "Industrial Relations"]
+        },
+        {
+          id: 'pub_art_38',
+          year: "1995",
+          title: "La semaine de 4 jours chez Volkswagen : un scénario original de sortie de crise ?",
+          authors: "Thoemmes, J., & Labit, A.",
+          journal: "Travail et Emploi",
+          volume: "(64)",
+          pages: "5-22",
+          url: "https://hal.science/hal-00933541",
+          language: "fr",
+          type: "journal-article",
+          tags: ["4-day week", "Volkswagen", "Crisis Management"],
+          themes: ["Time Autonomy", "Industrial Relations"]
+        }
+      ],
+      conferencePapers: [
+        {
+          id: 'pub_conf_1',
+          year: "2013",
+          title: "La conception du travail dans la «réforme de la vie» en début de XXe siècle",
+          authors: "Thoemmes, J.",
+          conference: "Colloque international 'A REFORMA DA VIDA'",
+          location: "Rio de Janeiro, Brazil",
+          url: "https://hal.science/hal-05014914",
+          language: "fr",
+          type: "conference",
+          tags: ["Work History", "Social Reform", "20th Century"],
+          themes: ["Work History", "Social Theory"]
+        },
+        {
+          id: 'pub_conf_2',
+          year: "2005",
+          title: "Du temps de travail des cadres aux cadres du temps de travail : les représentations des 35 heures",
+          authors: "Thoemmes, J., & Escarboutel, M.",
+          conference: "Xèmes Journées de Sociologie du Travail",
+          location: "Rouen, France",
+          pages: "316-340",
+          url: "https://shs.hal.science/halshs-00101967",
+          language: "fr",
+          type: "conference",
+          tags: ["Working Time", "35-hour week", "Management", "Representations"],
+          themes: ["Time Autonomy", "Work Organization"]
+        },
+        {
+          id: 'pub_conf_3',
+          year: "1999",
+          title: "Capitalisation du temps et différenciation par le genre",
+          authors: "Thoemmes, J., Thébault, C., & Flautre, A.",
+          conference: "VII ème Journées de Sociologie du Travail",
+          location: "Bologna, Italy",
+          url: "https://hal.science/hal-00941295",
+          language: "fr",
+          type: "conference",
+          tags: ["Time Capitalization", "Gender", "Working Time"],
+          themes: ["Time Autonomy", "Gender Studies"]
+        }
+      ],
+      technicalReports: [
+        {
+          id: 'pub_rep_1',
+          year: "2024",
+          title: "30 ans de recherches sur le travail en France... et après ? Livre Blanc",
+          authors: "Berthet, T., Mercier, D., ... Thoemmes, J., et al.",
+          publisher: "CNRS SHS",
+          url: "https://shs.hal.science/halshs-04862618",
+          language: "fr",
+          type: "report",
+          tags: ["Work Research", "France", "CNRS", "30 years"],
+          themes: ["Work Research", "Public Policy"]
+        },
+        {
+          id: 'pub_rep_2',
+          year: "2004",
+          title: "Les usages du temps libéré",
+          authors: "Thoemmes, J., Thébault, C., Rouch, J.-P., & Escarboutel, M.",
+          publisher: "Ministère délégué à la recherche",
+          url: "https://shs.hal.science/halshs-00112434",
+          language: "fr",
+          type: "report",
+          tags: ["Free Time", "Time Use"],
+          themes: ["Time Autonomy", "Social Policy"]
+        }
+      ],
+      preprints: [
+        {
+          id: 'pub_pre_1',
+          year: "2025",
+          title: "The Future of Work: A Social Regulation Theory Framework",
+          authors: "Thoemmes, J.",
+          journal: "SSRN",
+          url: "https://ssrn.com/abstract=5270796",
+          doi: "10.2139/ssrn.5270796",
+          language: "en",
+          type: "preprint",
+          tags: ["Future of Work", "Social Regulation", "Theory"],
+          themes: ["Future of Work", "Social Regulation"]
+        }
+      ]
+    };
+
+    // Combine all publications
+    const allPublications = [
+      ...publicationsData.books,
+      ...publicationsData.bookChapters,
+      ...publicationsData.journalArticles,
+      ...publicationsData.conferencePapers,
+      ...publicationsData.technicalReports,
+      ...publicationsData.preprints
+    ];
+
+    // Extract unique themes from publications with at least 1 publication
+    const themeCounts = {};
+    allPublications.forEach(pub => {
+      if (pub.themes) {
+        pub.themes.forEach(theme => {
+          themeCounts[theme] = (themeCounts[theme] || 0) + 1;
+        });
+      }
+    });
+    
+    const allYears = [...new Set(allPublications.map(pub => pub.year))].sort().reverse();
+
+    let filteredPublications = [...allPublications];
+    let currentFilters = {
+      search: '',
+      year: '',
+      type: '',
+      language: '',
+      theme: ''
+    };
+
+    let currentLanguage = 'en';
+
+    function toggleTheme() {
+      const body = document.body;
+      const btn = document.getElementById('themeBtn');
+      
+      if (body.getAttribute('data-theme') === 'dark') {
+        body.removeAttribute('data-theme');
+        btn.textContent = '🌙';
+        showToast('Light mode activated');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+        btn.textContent = '☀️';
+        showToast('Dark mode activated');
+      }
+    }
+
+    function showToast(message, type = 'success') {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.className = 'toast show ' + type;
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    function updateLanguage(lang) {
+      currentLanguage = lang;
+      const t = translations[lang];
+      
+      // Update text content
+      document.getElementById('heroSubtitle').textContent = t.heroSubtitle;
+      document.getElementById('heroBio').textContent = t.heroBio;
+      document.getElementById('researchTitle').textContent = t.researchTitle;
+      document.getElementById('researchSubtitle').textContent = t.researchSubtitle;
+      document.getElementById('publicationsTitle').textContent = t.publicationsTitle;
+      document.getElementById('publicationsSubtitle').textContent = t.publicationsSubtitle;
+      document.getElementById('booksLabel').textContent = t.booksLabel;
+      document.getElementById('chaptersLabel').textContent = t.chaptersLabel;
+      document.getElementById('articlesLabel').textContent = t.articlesLabel;
+      document.getElementById('conferenceLabel').textContent = t.conferenceLabel;
+      document.getElementById('reportsLabel').textContent = t.reportsLabel;
+      document.getElementById('preprintsLabel').textContent = t.preprintsLabel;
+      document.getElementById('totalLabel').textContent = t.totalLabel;
+      document.getElementById('halTitle').textContent = t.halTitle;
+      document.getElementById('halDescription').textContent = t.halDescription;
+      document.getElementById('halButton').textContent = t.halButton;
+      document.getElementById('contactTitle').textContent = t.contactTitle;
+      document.getElementById('searchInput').placeholder = t.searchPlaceholder;
+      
+      // Update theme cards
+      document.querySelectorAll('.theme-title').forEach(el => {
+        if (el.hasAttribute(`data-${lang}`)) {
+          el.textContent = el.getAttribute(`data-${lang}`);
+        }
+      });
+      
+      document.querySelectorAll('.theme-description').forEach(el => {
+        if (el.hasAttribute(`data-${lang}`)) {
+          el.textContent = el.getAttribute(`data-${lang}`);
+        }
+      });
+      
+      // Update filter options
+      const yearFilter = document.getElementById('yearFilter');
+      yearFilter.options[0].textContent = t.allYears;
+      
+      const langFilter = document.getElementById('langFilter');
+      langFilter.options[0].textContent = t.allLanguages;
+      
+      // Update results info
+      updateResultsInfo();
+      
+      // Update active filters
+      updateActiveFilters();
+      
+      // Re-render publications
+      renderPublications(filteredPublications);
+      
+      // Update export section language
+      const exportTitle = document.getElementById('exportTitle');
+      const exportDesc = document.getElementById('exportDesc');
+      if (exportTitle && exportDesc) {
+        const exportTranslations = {
+          en: { title: 'Export Publications', desc: 'Download your publications in various formats' },
+          fr: { title: 'Exporter les publications', desc: 'Téléchargez vos publications dans différents formats' },
+          de: { title: 'Publikationen exportieren', desc: 'Laden Sie Ihre Publikationen in verschiedenen Formaten herunter' }
+        };
+        const et = exportTranslations[lang] || exportTranslations.en;
+        exportTitle.textContent = et.title;
+        exportDesc.textContent = et.desc;
+      }
+    }
+
+    function updateResultsInfo() {
+      const t = translations[currentLanguage];
+      const resultsInfo = document.getElementById('resultsInfo');
+      resultsInfo.textContent = `${t.showingText} ${filteredPublications.length} ${t.ofText} ${allPublications.length} ${t.publicationsText}`;
+    }
+
+    function updateActiveFilters() {
+      const t = translations[currentLanguage];
+      const container = document.getElementById('activeFiltersContainer');
+      container.innerHTML = '';
+      
+      if (currentFilters.theme) {
+        const themeFilter = document.createElement('div');
+        themeFilter.className = 'active-filter-info';
+        themeFilter.innerHTML = `
+          <span>${t.filteringByTheme}${currentFilters.theme}</span>
+          <button class="clear-filter-btn" onclick="filterByTheme('')">${t.clearFilter}</button>
+        `;
+        container.appendChild(themeFilter);
+      }
+      
+      if (currentFilters.type) {
+        const typeFilter = document.createElement('div');
+        typeFilter.className = 'active-filter-info';
+        typeFilter.innerHTML = `
+          <span>${t.filteringByType}${t.typeLabels[currentFilters.type]}</span>
+          <button class="clear-filter-btn" onclick="filterByType('')">${t.clearFilter}</button>
+        `;
+        container.appendChild(typeFilter);
+      }
+    }
+
+    function filterByTheme(theme) {
+      currentFilters.theme = theme;
+      
+      // Update theme card active states
+      document.querySelectorAll('.theme-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      
+      if (theme) {
+        // Find and activate the clicked theme card
+        document.querySelectorAll('.theme-card').forEach(card => {
+          if (card.getAttribute('onclick') && card.getAttribute('onclick').includes(`'${theme}'`)) {
+            card.classList.add('active');
+          }
+        });
+      }
+      
+      updateActiveFilters();
+      filterPublications();
+    }
+
+    function filterByType(type) {
+      currentFilters.type = type;
+      
+      // Update stat card active states
+      document.querySelectorAll('.stat-card').forEach(card => {
+        card.classList.remove('active');
+      });
+      
+      if (type) {
+        // Find and activate the clicked stat card
+        document.querySelectorAll('.stat-card').forEach(card => {
+          if (card.getAttribute('onclick') && card.getAttribute('onclick').includes(`'${type}'`)) {
+            card.classList.add('active');
+          }
+        });
+      } else {
+        // Activate the "Total" card when showing all types
+        document.querySelectorAll('.stat-card').forEach(card => {
+          if (card.getAttribute('onclick') && card.getAttribute('onclick').includes("''")) {
+            card.classList.add('active');
+          }
+        });
+      }
+      
+      updateActiveFilters();
+      filterPublications();
+    }
+
+    function renderPublications(publications) {
+      const t = translations[currentLanguage];
+      const container = document.getElementById('publicationsList');
+      
+      if (publications.length === 0) {
+        container.innerHTML = `<p style="text-align: center; color: var(--text-secondary); padding: 2rem;">${t.noResultsText}</p>`;
+        return;
+      }
+
+      container.innerHTML = publications.map(pub => `
+        <div class="publication-card">
+          <div class="publication-header">
+            <h3 class="publication-title">${pub.title}</h3>
+            <span class="publication-year">${pub.year}</span>
+          </div>
+          ${pub.authors ? `<div class="publication-authors">${pub.authors}</div>` : ''}
+          <div class="publication-meta">
+            <span>${t.typeLabels[pub.type] || pub.type.replace('-', ' ')}</span>
+            <span>•</span>
+            <span>${pub.language.toUpperCase()}</span>
+            ${pub.journal ? `<span>•</span><span>${pub.journal}</span>` : ''}
+            ${pub.publisher ? `<span>•</span><span>${pub.publisher}</span>` : ''}
+            ${pub.inBook ? `<span>•</span><span>In: ${pub.inBook}</span>` : ''}
+            ${pub.conference ? `<span>•</span><span>Conference: ${pub.conference}</span>` : ''}
+            ${pub.location ? `<span>•</span><span>${pub.location}</span>` : ''}
+            ${pub.pages ? `<span>•</span><span>${pub.pages}</span>` : ''}
+            ${pub.volume ? `<span>•</span><span>Vol. ${pub.volume}</span>` : ''}
+          </div>
+          ${pub.editors ? `<div style="margin-top: 0.5rem; font-style: italic; color: var(--text-tertiary); font-size: 0.875rem;">Edited by: ${pub.editors}</div>` : ''}
+          ${pub.tags && pub.tags.length > 0 ? `
+            <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              ${pub.tags.map(tag => `<span class="publication-tag">${tag}</span>`).join('')}
+            </div>
+          ` : ''}
+          <div class="publication-actions">
+            ${pub.url ? `<a href="${pub.url}" target="_blank" rel="noopener noreferrer" class="action-button">
+              ${pub.url.includes('ssrn.com') ? t.viewOnSSRN : 
+                pub.url.includes('.pdf') ? t.viewPDF : 
+                t.viewOnHAL}
+            </a>` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterPublications() {
+      filteredPublications = allPublications.filter(pub => {
+        const matchesSearch = !currentFilters.search || 
+          pub.title.toLowerCase().includes(currentFilters.search.toLowerCase()) ||
+          (pub.authors && pub.authors.toLowerCase().includes(currentFilters.search.toLowerCase())) ||
+          (pub.tags && pub.tags.some(tag => tag.toLowerCase().includes(currentFilters.search.toLowerCase())));
+        
+        const matchesYear = !currentFilters.year || pub.year === currentFilters.year;
+        const matchesType = !currentFilters.type || pub.type === currentFilters.type;
+        const matchesLang = !currentFilters.language || pub.language === currentFilters.language;
+        const matchesTheme = !currentFilters.theme || (pub.themes && pub.themes.includes(currentFilters.theme));
+
+        return matchesSearch && matchesYear && matchesType && matchesLang && matchesTheme;
+      });
+
+      // Sort by year (newest first)
+      filteredPublications.sort((a, b) => parseInt(b.year) - parseInt(a.year));
+      
+      // Update results info
+      updateResultsInfo();
+      
+      renderPublications(filteredPublications);
+    }
+
+    // Debounce function for search
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    function initializeFilters() {
+      // Populate year filter
+      const yearFilter = document.getElementById('yearFilter');
+      yearFilter.innerHTML = '<option value="">All Years</option>' +
+        allYears.map(year => `<option value="${year}">${year}</option>`).join('');
+
+      // Add event listeners with debounced search
+      document.getElementById('searchInput').addEventListener('input', debounce((e) => {
+        currentFilters.search = e.target.value;
+        filterPublications();
+      }, 300));
+      
+      document.getElementById('yearFilter').addEventListener('change', (e) => {
+        currentFilters.year = e.target.value;
+        filterPublications();
+      });
+      
+      document.getElementById('langFilter').addEventListener('change', (e) => {
+        currentFilters.language = e.target.value;
+        filterPublications();
+      });
+    }
+
+    // Initialize everything when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeFilters();
+      renderPublications(allPublications);
+      
+      // Language selector
+      document.getElementById('languageSelect').addEventListener('change', function() {
+        updateLanguage(this.value);
+        const langNames = {en: 'English', fr: 'Français', de: 'Deutsch'};
+        showToast(`Language: ${langNames[this.value]}`);
+      });
+
+      // Smooth scroll for navigation
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // Add keyboard navigation to theme and stat cards
+      document.querySelectorAll('.theme-card, .stat-card').forEach(card => {
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+          }
+        });
+      });
+    });
+
+    // Global error handler
+    window.addEventListener('error', (e) => {
+      console.error('Application error:', e);
+      if (e.message && !e.message.includes('Script error')) {
+        showToast('An error occurred. Please refresh the page.', 'error');
+      }
+    });
+
+    // Data extraction utility - FIXED VERSION
+    window.extractPublicationsData = function() {
+      try {
+        const data = {
+          publications: allPublications,
+          metadata: {
+            totalCount: allPublications.length,
+            lastModified: new Date().toISOString(),
+            types: [...new Set(allPublications.map(p => p.type))],
+            years: [...new Set(allPublications.map(p => p.year))].sort((a, b) => b - a),
+            languages: [...new Set(allPublications.map(p => p.language))],
+            themes: [...new Set(allPublications.flatMap(p => p.themes || []))]
+          }
+        };
+        
+        const jsonString = JSON.stringify(data, null, 2);
+        const fileName = `publications-data-${new Date().toISOString().split('T')[0]}.json`;
+        
+        // Method 1: Modern download approach
+        const blob = new Blob([jsonString], { type: 'application/json' });
+        const url = window.URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        a.style.display = 'none';
+        
+        // Add to DOM, click, then remove with delay
+        document.body.appendChild(a);
+        
+        setTimeout(() => {
+          a.click();
+          setTimeout(() => {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+          }, 100);
+        }, 0);
+        
+        // Method 2: Copy to clipboard as backup
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(jsonString).then(() => {
+            console.log('✅ Data also copied to clipboard!');
+          }).catch(err => {
+            console.log('Clipboard API not available:', err);
+            fallbackCopyToClipboard(jsonString);
+          });
+        } else {
+          fallbackCopyToClipboard(jsonString);
+        }
+        
+        // Show success message
+        showToast('Extracting data... Check downloads folder!', 'success');
+        
+        // Log to console as backup
+        console.log('✅ Publications data:', data);
+        console.log('Total publications:', allPublications.length);
+        
+      } catch (error) {
+        console.error('❌ Error in extraction:', error);
+        // Fallback: Show data in modal for manual copy
+        showDataInModal();
+      }
+    };
+    
+    // Fallback clipboard copy
+    function fallbackCopyToClipboard(text) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.top = '0';
+      textArea.style.left = '0';
+      textArea.style.width = '2em';
+      textArea.style.height = '2em';
+      textArea.style.padding = '0';
+      textArea.style.border = 'none';
+      textArea.style.outline = 'none';
+      textArea.style.boxShadow = 'none';
+      textArea.style.background = 'transparent';
+      
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
+        console.log('✅ Fallback copy successful');
+      } catch (err) {
+        console.error('❌ Fallback copy failed:', err);
+      }
+      
+      document.body.removeChild(textArea);
+    }
+    
+    // Show data in modal for manual copy
+    function showDataInModal() {
+      const data = {
+        publications: allPublications,
+        metadata: {
+          totalCount: allPublications.length,
+          lastModified: new Date().toISOString()
+        }
+      };
+      
+      const jsonString = JSON.stringify(data, null, 2);
+      
+      // Create modal
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.8);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      `;
+      
+      const container = document.createElement('div');
+      container.style.cssText = `
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 90%;
+        max-height: 90%;
+        overflow: auto;
+      `;
+      
+      container.innerHTML = `
+        <h2 style="color: #333; margin-bottom: 10px;">Copy Your Publications Data</h2>
+        <p style="color: #666; margin-bottom: 10px;">Click the button below to select all, then press Ctrl+C (or Cmd+C) to copy</p>
+        <textarea id="dataOutput" style="width: 100%; height: 400px; font-family: monospace; font-size: 12px; padding: 10px; border: 1px solid #ddd;">${jsonString}</textarea>
+        <div style="margin-top: 10px;">
+          <button onclick="document.getElementById('dataOutput').select(); document.getElementById('dataOutput').setSelectionRange(0, 99999);" style="padding: 10px 20px; background: #0891b2; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">Select All</button>
+          <button onclick="this.parentElement.parentElement.parentElement.remove();" style="padding: 10px 20px; background: #6b7280; color: white; border: none; border-radius: 4px; cursor: pointer;">Close</button>
+        </div>
+      `;
+      
+      modal.appendChild(container);
+      document.body.appendChild(modal);
+      
+      // Auto-select
+      setTimeout(() => {
+        const textarea = document.getElementById('dataOutput');
+        if (textarea) {
+          textarea.select();
+          textarea.setSelectionRange(0, 99999);
+        }
+      }, 100);
+      
+      showToast('Manual copy mode: Select all and press Ctrl+C', 'warning');
+    }
+
+    // Add extraction button (temporary for migration)
+    const nav = document.querySelector('.nav-controls');
+    const extractBtn = document.createElement('button');
+    extractBtn.textContent = '📤 Extract Data';
+    extractBtn.onclick = function() {
+      // Visual feedback
+      extractBtn.textContent = '⏳ Extracting...';
+      extractBtn.disabled = true;
+      
+      // Try extraction
+      extractPublicationsData();
+      
+      // Reset button after delay
+      setTimeout(() => {
+        extractBtn.textContent = '📤 Extract Data';
+        extractBtn.disabled = false;
+      }, 2000);
+    };
+    extractBtn.className = 'theme-toggle';
+    extractBtn.setAttribute('aria-label', 'Extract publications data');
+    extractBtn.style.background = '#059669';
+    extractBtn.title = 'Download all publications as JSON file';
+    nav.appendChild(extractBtn);
+    
+    // Add alternative copy button
+    const copyBtn = document.createElement('button');
+    copyBtn.textContent = '📋 Copy Data';
+    copyBtn.onclick = function() {
+      const data = {
+        publications: allPublications,
+        metadata: {
+          totalCount: allPublications.length,
+          lastModified: new Date().toISOString(),
+          types: [...new Set(allPublications.map(p => p.type))],
+          years: [...new Set(allPublications.map(p => p.year))].sort((a, b) => b - a),
+          languages: [...new Set(allPublications.map(p => p.language))],
+          themes: [...new Set(allPublications.flatMap(p => p.themes || []))]
+        }
+      };
+      
+      const jsonString = JSON.stringify(data, null, 2);
+      
+      // Try modern clipboard API first
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(jsonString).then(() => {
+          showToast('✅ Data copied to clipboard! Paste into a text editor and save as .json', 'success');
+          copyBtn.textContent = '✅ Copied!';
+          setTimeout(() => {
+            copyBtn.textContent = '📋 Copy Data';
+          }, 2000);
+        }).catch(() => {
+          fallbackCopyToClipboard(jsonString);
+        });
+      } else {
+        fallbackCopyToClipboard(jsonString);
+      }
+    };
+    copyBtn.className = 'theme-toggle';
+    copyBtn.setAttribute('aria-label', 'Copy publications data to clipboard');
+    copyBtn.style.background = '#7c3aed';
+    copyBtn.title = 'Copy all publications data to clipboard';
+    nav.appendChild(copyBtn);
+    
+    // Also add keyboard shortcut for extraction (Ctrl+Shift+E)
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && e.shiftKey && e.key === 'E') {
+        e.preventDefault();
+        extractPublicationsData();
+      }
+    });
+    
+    // Log helpful message
+    console.log('💡 Tip: Click the green "Extract Data" button or press Ctrl+Shift+E to download your publications data.');
+    console.log('📋 If download fails, the data will be copied to clipboard and shown in a modal for manual copying.');
+    
+    // Make data easily accessible from console
+    window.publicationsData = {
+      getAll: () => allPublications,
+      getJSON: () => JSON.stringify({
+        publications: allPublications,
+        metadata: {
+          totalCount: allPublications.length,
+          lastModified: new Date().toISOString(),
+          types: [...new Set(allPublications.map(p => p.type))],
+          years: [...new Set(allPublications.map(p => p.year))].sort((a, b) => b - a),
+          languages: [...new Set(allPublications.map(p => p.language))],
+          themes: [...new Set(allPublications.flatMap(p => p.themes || []))]
+        }
+      }, null, 2),
+      copyToClipboard: function() {
+        const json = this.getJSON();
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(json).then(() => console.log('✅ Copied to clipboard!'));
+        } else {
+          console.log('📋 Copy this manually:', json);
+        }
+      }
+    };
+    
+    console.log('🔧 Quick access: Type "publicationsData.copyToClipboard()" in console to copy all data');
+    
+    // Add academic export functions
+    function generateBibTeX() {
+      let bibtex = '';
+      
+      allPublications.forEach(pub => {
+        const type = {
+          'journal-article': 'article',
+          'book': 'book',
+          'book-chapter': 'inbook',
+          'conference': 'inproceedings',
+          'report': 'techreport',
+          'preprint': 'misc'
+        }[pub.type] || 'misc';
+        
+        const key = (pub.authors.split(',')[0] || 'Author').replace(/\s/g, '') + pub.year;
+        
+        bibtex += `@${type}{${key},\n`;
+        bibtex += `  title = {${pub.title}},\n`;
+        bibtex += `  author = {${pub.authors}},\n`;
+        bibtex += `  year = {${pub.year}},\n`;
+        
+        if (pub.journal) bibtex += `  journal = {${pub.journal}},\n`;
+        if (pub.volume) bibtex += `  volume = {${pub.volume}},\n`;
+        if (pub.pages) bibtex += `  pages = {${pub.pages}},\n`;
+        if (pub.publisher) bibtex += `  publisher = {${pub.publisher}},\n`;
+        if (pub.inBook) bibtex += `  booktitle = {${pub.inBook}},\n`;
+        if (pub.editors) bibtex += `  editor = {${pub.editors}},\n`;
+        if (pub.doi) bibtex += `  doi = {${pub.doi}},\n`;
+        if (pub.url) bibtex += `  url = {${pub.url}},\n`;
+        
+        bibtex += '}\n\n';
+      });
+      
+      return bibtex;
+    }
+
+    // Generate CSV for Excel
+    function generateCSV() {
+      const headers = ['Year', 'Title', 'Authors', 'Type', 'Journal/Book', 'Volume', 'Pages', 'Publisher', 'Language', 'URL'];
+      
+      const rows = allPublications.map(pub => [
+        pub.year,
+        `"${pub.title.replace(/"/g, '""')}"`,
+        `"${pub.authors.replace(/"/g, '""')}"`,
+        pub.type,
+        `"${(pub.journal || pub.inBook || pub.conference || '').replace(/"/g, '""')}"`,
+        pub.volume || '',
+        pub.pages || '',
+        `"${(pub.publisher || '').replace(/"/g, '""')}"`,
+        pub.language.toUpperCase(),
+        pub.url || ''
+      ]);
+      
+      return [headers.join(','), ...rows.map(row => row.join(','))].join('\n');
+    }
+
+    // Generate formatted text for Word/Google Docs
+    function generateFormattedText() {
+      let text = 'PUBLICATIONS - Jens Thoemmes\n';
+      text += '================================\n\n';
+      
+      const types = {
+        'book': 'BOOKS',
+        'book-chapter': 'BOOK CHAPTERS',
+        'journal-article': 'JOURNAL ARTICLES',
+        'conference': 'CONFERENCE PAPERS',
+        'report': 'REPORTS',
+        'preprint': 'PREPRINTS'
+      };
+      
+      Object.entries(types).forEach(([type, heading]) => {
+        const pubs = allPublications.filter(p => p.type === type);
+        if (pubs.length > 0) {
+          text += `${heading} (${pubs.length})\n`;
+          text += '-'.repeat(heading.length + 4) + '\n\n';
+          
+          pubs.forEach((pub, index) => {
+            text += `${index + 1}. ${pub.authors} (${pub.year}). ${pub.title}. `;
+            
+            if (pub.journal) text += `${pub.journal}`;
+            if (pub.volume) text += `, ${pub.volume}`;
+            if (pub.pages) text += `, ${pub.pages}`;
+            if (pub.publisher) text += `. ${pub.publisher}`;
+            if (pub.inBook) text += `In ${pub.inBook}`;
+            if (pub.editors) text += ` (${pub.editors})`;
+            
+            text += '.\n';
+            if (pub.url) text += `   URL: ${pub.url}\n`;
+            text += '\n';
+          });
+          
+          text += '\n';
+        }
+      });
+      
+      text += `\nTotal Publications: ${allPublications.length}\n`;
+      text += `Generated: ${new Date().toLocaleDateString()}\n`;
+      
+      return text;
+    }
+
+    // Generate APA format citations
+    function generateAPAList() {
+      let text = 'PUBLICATIONS - Jens Thoemmes\n';
+      text += 'APA Format\n';
+      text += '================================\n\n';
+      
+      // Sort by year (newest first), then by title
+      const sorted = [...allPublications].sort((a, b) => {
+        if (b.year !== a.year) return b.year - a.year;
+        return a.title.localeCompare(b.title);
+      });
+      
+      sorted.forEach(pub => {
+        // Format authors for APA (Last, F. I.)
+        const authorParts = pub.authors.split(', ');
+        const apaAuthors = authorParts.map(author => {
+          const names = author.trim().split(' ');
+          if (names.length > 1) {
+            const last = names[names.length - 1];
+            const initials = names.slice(0, -1).map(n => n[0] + '.').join(' ');
+            return `${last}, ${initials}`;
+          }
+          return author;
+        }).join(', ');
+        
+        text += `${apaAuthors} (${pub.year}). `;
+        
+        // Title formatting depends on type
+        if (pub.type === 'book') {
+          text += `*${pub.title}*. `;
+          if (pub.publisher) text += `${pub.publisher}.`;
+        } else if (pub.type === 'journal-article') {
+          text += `${pub.title}. `;
+          if (pub.journal) text += `*${pub.journal}*`;
+          if (pub.volume) text += `, *${pub.volume}*`;
+          if (pub.pages) text += `, ${pub.pages}`;
+          text += '.';
+        } else if (pub.type === 'book-chapter') {
+          text += `${pub.title}. `;
+          if (pub.inBook) text += `In ${pub.editors ? pub.editors + ' ' : ''}*${pub.inBook}*`;
+          if (pub.pages) text += ` (pp. ${pub.pages})`;
+          if (pub.publisher) text += `. ${pub.publisher}`;
+          text += '.';
+        }
+        
+        if (pub.url) text += ` ${pub.url}`;
+        text += '\n\n';
+      });
+      
+      return text;
+    }
+
+    // Download helper
+    function downloadFile(content, filename, mimeType) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 100);
+    }
+
+    // Add export buttons to page
+    setTimeout(() => {
+      const halInfo = document.querySelector('.hal-info');
+      if (halInfo) {
+        const exportSection = document.createElement('div');
+        exportSection.className = 'hal-info';
+        exportSection.style.marginTop = '2rem';
+        exportSection.innerHTML = `
+          <h3>📥 <span id="exportTitle">Export Publications</span></h3>
+          <p id="exportDesc">Download your publications in various formats</p>
+          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
+            <button onclick="downloadFile(generateBibTeX(), 'thoemmes-publications.bib', 'text/plain'); showToast('BibTeX downloaded!', 'success');" class="action-button" style="background: #0891b2; color: white; border: none; padding: 0.75rem 1.5rem;">
+              📚 BibTeX
+            </button>
+            <button onclick="downloadFile(generateCSV(), 'thoemmes-publications.csv', 'text/csv'); showToast('CSV downloaded!', 'success');" class="action-button" style="background: #10b981; color: white; border: none; padding: 0.75rem 1.5rem;">
+              📊 Excel CSV
+            </button>
+            <button onclick="downloadFile(generateFormattedText(), 'thoemmes-publications.txt', 'text/plain'); showToast('Text file downloaded!', 'success');" class="action-button" style="background: #8b5cf6; color: white; border: none; padding: 0.75rem 1.5rem;">
+              📄 Word/Text
+            </button>
+            <button onclick="downloadFile(generateAPAList(), 'thoemmes-publications-apa.txt', 'text/plain'); showToast('APA format downloaded!', 'success');" class="action-button" style="background: #dc2626; color: white; border: none; padding: 0.75rem 1.5rem;">
+              📝 APA Format
+            </button>
+          </div>
+        `;
+        halInfo.parentNode.insertBefore(exportSection, halInfo.nextSibling);
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
