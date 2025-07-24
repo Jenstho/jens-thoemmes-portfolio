@@ -2473,17 +2473,16 @@
           const pub = halSync.transformPublication(halDoc);
           
           // Check if publication already exists
-          const exists = allPublications.some(p => {
+                   const exists = allPublications.some(p => {
   // Normalise les titres en enlevant ponctuation et espaces multiples
   const normalizeTitle = (title) => title.toLowerCase()
     .replace(/[^\w\sàâäéèêëïîôùûüÿæœç]/g, '')
-    .replace(/\s+/g, ' ')
+    .replace(/\s+/g, '')  // <-- Enlève TOUS les espaces
     .trim();
   
   return normalizeTitle(p.title) === normalizeTitle(pub.title) && 
          p.year === pub.year;
-});          
-          if (!exists && pub.title) {
+});          if (!exists && pub.title) {
             // Add to main array
             allPublications.push(pub);
             newCount++;
