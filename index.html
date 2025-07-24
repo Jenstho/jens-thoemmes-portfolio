@@ -2468,9 +2468,15 @@
         const halDocs = await halSync.fetchFromHAL();
         
         let newCount = 0;
-        
         for (const halDoc of halDocs) {
-          const pub = halSync.transformPublication(halDoc);
+          // Exclure le chapitre problématique de 2025
+          if (halDoc.title_s && halDoc.title_s[0] && 
+              halDoc.title_s[0].includes('épargne') && 
+              halDoc.producedDateY_i === 2025) {
+            continue;
+          }
+          
+          const pub = halSync.transformPublication(halDoc);      
           
           // Check if publication already exists
                    const exists = allPublications.some(p => {
