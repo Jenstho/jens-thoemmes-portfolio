@@ -2331,7 +2331,8 @@
     document.addEventListener('DOMContentLoaded', function() {
       initializeFilters();
       renderPublications(allPublications);
-      
+      // Add HAL sync button
+      addHALSyncButton();
       // Language selector
       document.getElementById('languageSelect').addEventListener('change', function() {
         updateLanguage(this.value);
@@ -2369,7 +2370,168 @@
       }
     });
 
-    // Data extraction utility - FIXED VERSION
+    // ============= HAL SYNC FEATURE START =============
+    // This code syncs new publications from HAL Science
+    // IMPORTANT: Only checks for publications from 2025 onwards
+    // This is to avoid importing all 100+ existing HAL publications
+    // and only sync future publications added to HAL
+
+    // HAL Sync Manager
+    class HALSyncManager {
+      constructor() {
+        this.authorId = "jens-thoemmes";
+        this.baseURL = "https://api.archives-ouvertes.fr/search/";
+      }
+
+      async fetchFromHAL() {
+        try {
+          // Only get publications from 2025 onwards (for future publications)
+          const currentYear = new Date().getFullYear();
+          const query = `authIdHal_s:"${this.authorId}" AND producedDateY_i:[2025 TO ${currentYear + 1}]`;
+          const params = new URLSearchParams({
+            q: query,
+            wt: 'json',
+            fl: 'docid,title_s,authFullName_s,producedDateY_i,journalTitle_s,docType_s,uri_s',
+            rows: 50,  // Reduced since we're only checking new ones
+            sort: 'producedDate_tdate desc'
+          });
+
+          const response = await fetch(`${this.baseURL}?${params}`);
+          if (!response.ok) throw new Error('HAL API error');
+          
+          const data = await response.json();
+          return data.response.docs;
+        } catch (error) {
+          console.error('HAL fetch error:', error);
+          return [];
+        }
+      }
+
+      transformPublication(halDoc) {
+        const typeMap = {
+          'ART': 'journal-article',
+          'COUV': 'book-chapter',
+          'OUV': 'book',
+          'COMM': 'conference',
+          'REPORT': 'report'
+        };
+
+        return {
+          id: `hal_${halDoc.docid}`,
+          year: halDoc.producedDateY_i?.toString() || '2024',
+          title: Array.isArray(halDoc.title_s) ? halDoc.title_s[0] : halDoc.title_s,
+          authors: Array.isArray(halDoc.authFullName_s) ? 
+            halDoc.authFullName_s.join(', ') : 'Thoemmes, J.',
+          journal: halDoc.journalTitle_s || '',
+          url: halDoc.uri_s,
+          type: typeMap[halDoc.docType_s] || 'journal-article',
+          language: 'en',
+          tags: ['From HAL'],
+          themes: []
+        };
+      }
+    }
+
+    // Create sync button function
+    function addHALSyncButton() {
+      const halInfo = document.querySelector('.hal-info');
+      if (!halInfo) return;
+
+      // Add sync button
+      const syncDiv = document.createElement('div');
+      syncDiv.style.marginTop = '1rem';
+      syncDiv.innerHTML = `
+        <button id="halSyncBtn" class="hal-link" style="background: #059669; margin-left: 1rem;">
+          🔄 Check for New Publications (2025+)
+        </button>
+        <div id="syncStatus" style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.875rem;"></div>
+      `;
+      
+      halInfo.appendChild(syncDiv);
+
+      // Add click handler
+      document.getElementById('halSyncBtn').addEventListener('click', syncWithHAL);
+    }
+
+    // Sync function
+    async function syncWithHAL() {
+      const btn = document.getElementById('halSyncBtn');
+      const status = document.getElementById('syncStatus');
+      
+      // Show loading
+      btn.disabled = true;
+      btn.textContent = '⏳ Checking HAL...';
+      status.textContent = 'Checking for publications from 2025 onwards...';
+
+      try {
+        const halSync = new HALSyncManager();
+        const halDocs = await halSync.fetchFromHAL();
+        
+        let newCount = 0;
+        
+        for (const halDoc of halDocs) {
+          const pub = halSync.transformPublication(halDoc);
+          
+          // Check if publication already exists
+          const exists = allPublications.some(p => 
+            p.title.toLowerCase() === pub.title.toLowerCase() && 
+            p.year === pub.year
+          );
+          
+          if (!exists && pub.title) {
+            // Add to main array
+            allPublications.push(pub);
+            newCount++;
+            
+            // Add to appropriate category
+            switch(pub.type) {
+              case 'journal-article':
+                publicationsData.journalArticles.push(pub);
+                break;
+              case 'book':
+                publicationsData.books.push(pub);
+                break;
+              case 'book-chapter':
+                publicationsData.bookChapters.push(pub);
+                break;
+              // Add other types as needed
+            }
+          }
+        }
+        
+        if (newCount > 0) {
+          // Update counts
+          document.getElementById('articlesCount').textContent = 
+            publicationsData.journalArticles.length;
+          document.getElementById('booksCount').textContent = 
+            publicationsData.books.length;
+          document.getElementById('chaptersCount').textContent = 
+            publicationsData.bookChapters.length;
+          document.getElementById('totalCount').textContent = 
+            allPublications.length;
+          
+          // Re-render
+          filterPublications();
+          
+          // Show success
+          showToast(`Added ${newCount} new publications from HAL!`, 'success');
+          status.textContent = `Found ${newCount} new publications from 2025+`;
+        } else {
+          status.textContent = 'No new publications found from 2025 onwards';
+          showToast('No new publications to add (checking 2025+)', 'info');
+        }
+        
+      } catch (error) {
+        console.error('Sync error:', error);
+        status.textContent = 'Error connecting to HAL';
+        showToast('Could not connect to HAL Science', 'error');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '🔄 Check for New Publications (2025+)';
+      }
+    }
+
+    // ============= HAL SYNC FEATURE END =============    // Data extraction utility - FIXED VERSION
     window.extractPublicationsData = function() {
       try {
         const data = {
