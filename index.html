@@ -2559,6 +2559,59 @@
           
           // Continue avec les mises à jour normales
           // Update counts
+
+if (newCount > 0) {
+          // Générer le code à copier pour GitHub
+          let codeToAdd = '\n// Publications ajoutées depuis HAL le ' + new Date().toLocaleDateString() + '\n';
+          
+          for (const halDoc of halDocs) {
+            const pub = halSync.transformPublication(halDoc);
+            const exists = allPublications.some(p => /* votre code de vérification */);
+            
+            if (!exists && pub.title) {
+              // Générer le code pour cette publication
+              codeToAdd += `        {\n`;
+              codeToAdd += `          id: 'hal_${pub.id.split('_')[1]}',\n`;
+              codeToAdd += `          year: "${pub.year}",\n`;
+              codeToAdd += `          title: "${pub.title.replace(/"/g, '\\"')}",\n`;
+              codeToAdd += `          authors: "${pub.authors}",\n`;
+              if (pub.journal) codeToAdd += `          journal: "${pub.journal}",\n`;
+              codeToAdd += `          url: "${pub.url}",\n`;
+              codeToAdd += `          language: "${pub.language}",\n`;
+              codeToAdd += `          type: "${pub.type}",\n`;
+              codeToAdd += `          tags: ["From HAL"],\n`;
+              codeToAdd += `          themes: []\n`;
+              codeToAdd += `        },\n`;
+            }
+          }
+          
+          // Afficher le code dans une zone de texte
+          const codeBox = document.createElement('div');
+          codeBox.style.cssText = 'margin-top: 1rem; padding: 1rem; background: var(--bg-tertiary); border-radius: 8px;';
+          codeBox.innerHTML = `
+            <h4 style="margin-bottom: 0.5rem;">Code à ajouter dans index.html:</h4>
+            <textarea id="halCode" style="width: 100%; height: 200px; font-family: monospace; font-size: 0.75rem; padding: 0.5rem;">${codeToAdd}</textarea>
+            <button onclick="document.getElementById('halCode').select(); document.execCommand('copy'); showToast('Code copié!', 'success');" 
+                    class="hal-link" style="background: #7c3aed; margin-top: 0.5rem;">
+              📋 Copier le code
+            </button>
+            <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);">
+              1. Copiez ce code<br>
+              2. Éditez index.html sur GitHub<br>
+              3. Trouvez la section appropriée (books, journalArticles, etc.)<br>
+              4. Collez à la fin de la liste
+            </p>
+          `;
+          
+          const halInfo = document.querySelector('.hal-info');
+          const existingBox = document.getElementById('halCodeBox');
+          if (existingBox) existingBox.remove();
+          codeBox.id = 'halCodeBox';
+          halInfo.appendChild(codeBox);
+          
+          // Continue avec les mises à jour normales
+          // Update counts
+  
         if (newCount > 0) {
           // Update counts
           document.getElementById('articlesCount').textContent = 
