@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jens Thoemmes - Sociologist & Research Professor. Research on work sociology, time autonomy, labor mobility, and social regulation theory.">
-  <meta name="keywords" content="Jens Thoemmes, sociology, work research, time autonomy, labor mobility, CNRS, Toulouse">
+  <meta name="description" content="Jens Thoemmes: CNRS sociologist researching working time regulation, telework, industrial relations, and labour mobility in France, Germany & Europe.">
+  <meta name="keywords" content="Jens Thoemmes, sociology of work, working time regulation, telework, remote work, industrial relations, collective bargaining, posted workers, labour mobility, future of work, CNRS, Toulouse, France, Germany">
   <meta name="author" content="Jens Thoemmes">
   <meta property="og:title" content="Jens Thoemmes - Academic Portfolio">
-  <meta property="og:description" content="Sociologist & Research Professor - Research on work sociology, time autonomy, and labor mobility">
+  <meta property="og:description" content="CNRS sociologist researching working time regulation, telework, industrial relations, and labour mobility in France, Germany & Europe">
   <meta property="og:type" content="website">
    <meta property="og:url" content="https://jens-thoemmes.com/">
   <meta property="og:image" content="https://jens-thoemmes.com/assets/profile-image.jpg">
@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="Jens Thoemmes Academic Portfolio">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Jens Thoemmes - Sociologist & Research Professor">
-  <meta name="twitter:description" content="CNRS Senior Researcher specializing in work sociology, time autonomy, and labor mobility">
+  <meta name="twitter:description" content="CNRS sociologist researching working time regulation, telework, industrial relations, and labour mobility in France, Germany & Europe">
   <meta name="twitter:image" content="https://jens-thoemmes.com/assets/profile-image.jpg">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0891b2">
@@ -36,7 +36,9 @@
     "sameAs": [
       "https://cv.hal.science/jens-thoemmes",
       "https://www.researchgate.net/profile/Jens-Thoemmes",
-      "https://certop.cnrs.fr/thoemmes-jens/"
+      "https://certop.cnrs.fr/thoemmes-jens/",
+      "https://orcid.org/0000-0001-8679-7425",
+      "https://scholar.google.fr/citations?user=5W48OkIAAAAJ"
     ],
     "affiliation": [
       {
@@ -57,13 +59,23 @@
     ],
     "knowsAbout": [
       "Work Sociology",
+      "Sociology of Work and Employment",
       "Time Autonomy",
+      "Working Time Regulation",
+      "Working Time Accounts",
       "Labor Mobility",
+      "Posted Workers",
+      "Labour Migration",
+      "Telework",
       "Remote Work",
+      "Hybrid Work",
       "Industrial Relations",
+      "Collective Bargaining",
       "Social Regulation Theory",
-      "Temporalities",
-      "Future of Work"
+      "Temporalities of Work",
+      "Future of Work",
+      "Comparative Industrial Relations",
+      "Employment Relations France Germany"
     ],
     "hasOccupation": {
       "@type": "Occupation",
@@ -614,6 +626,41 @@
       color: var(--primary);
     }
 
+    /* New SEO elements */
+    .hero-fields {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .publications-intro {
+      max-width: 800px;
+      margin: 0.5rem auto 0 auto;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .academic-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .academic-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .academic-links a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .academic-links a:hover {
+      text-decoration: underline;
+    }
+
     .toast {
       position: fixed;
       bottom: 2rem;
@@ -756,8 +803,10 @@
       <h1 id="heroName">Jens Thoemmes</h1>
       <p class="subtitle" id="heroSubtitle">Sociologist & Research Professor</p>
       <p class="bio" id="heroBio">
-        Work sociology, time autonomy, labor mobility, and social regulation theory. 
-        Comparative research across France, Germany, and international contexts.
+        Sociology of work and employment, working time regulation, labour mobility, and social regulation theory. Comparative research on telework, collective bargaining, and the future of work across France, Germany, Europe, and Malaysia.
+      </p>
+      <p class="hero-fields" id="heroFields">
+        Research fields: working time, social times, temporalities, remote work, work organization, and posted work.
       </p>
       <div class="position-badges">
         <span class="position-badge">CNRS Senior Researcher</span>
@@ -771,7 +820,10 @@
   <section id="publications" class="main-container">
     <div class="section-header">
       <h2 id="publicationsTitle">Selected Publications</h2>
-      <p id="publicationsSubtitle">Research outputs and contributions (1995-2025)</p>
+      <p id="publicationsSubtitle">Research outputs and contributions (1995-2026)</p>
+      <p class="publications-intro" id="publicationsIntro">
+        76 publications on working time accounts, telework, posted workers, social regulation theory, temporalities, and comparative industrial relations in France, Germany, China, Malaysia, and Europe. Topics include collective bargaining, labour mobility, and the future of work.
+      </p>
     </div>
 
     <!-- Publications Statistics (clickable) -->
@@ -781,11 +833,11 @@
         <div class="stat-label" id="booksLabel">Books</div>
       </div>
       <div class="stat-card" onclick="filterByType('book-chapter')" tabindex="0" role="button" aria-label="Filter by book chapters">
-        <div class="stat-number" id="chaptersCount">22</div>
+        <div class="stat-number" id="chaptersCount">23</div>
         <div class="stat-label" id="chaptersLabel">Book Chapters</div>
       </div>
       <div class="stat-card" onclick="filterByType('journal-article')" tabindex="0" role="button" aria-label="Filter by journal articles">
-        <div class="stat-number" id="articlesCount">38</div>
+        <div class="stat-number" id="articlesCount">40</div>
         <div class="stat-label" id="articlesLabel">Journal Articles</div>
       </div>
       <div class="stat-card" onclick="filterByType('conference')" tabindex="0" role="button" aria-label="Filter by conference papers">
@@ -801,7 +853,7 @@
         <div class="stat-label" id="preprintsLabel">Preprints</div>
       </div>
       <div class="stat-card" onclick="filterByType('')" tabindex="0" role="button" aria-label="Show all publications">
-        <div class="stat-number" id="totalCount">73</div>
+        <div class="stat-number" id="totalCount">76</div>
         <div class="stat-label" id="totalLabel">Total Publications</div>
       </div>
     </div>
@@ -815,57 +867,50 @@
       <div class="theme-card" onclick="filterByTheme('Time Autonomy')" tabindex="0" role="button" aria-label="Filter by Time Autonomy theme">
         <div class="theme-icon">⏰</div>
         <h3 class="theme-title" data-en="Time Autonomy & Work Organization" data-fr="Autonomie temporelle et organisation du travail" data-de="Zeitautonomie & Arbeitsorganisation">Time Autonomy & Work Organization</h3>
-        <p class="theme-description" data-en="Investigating flexible working arrangements, working time accounts, and work-life balance across different cultural contexts." data-fr="Étude des modalités de travail flexibles, des comptes épargne-temps et de l'équilibre travail-vie privée dans différents contextes culturels." data-de="Untersuchung flexibler Arbeitsmodelle, Arbeitszeitkonten und Work-Life-Balance in verschiedenen kulturellen Kontexten.">
-          Investigating flexible working arrangements, working time accounts, 
-          and work-life balance across different cultural contexts.
+        <p class="theme-description" data-en="Investigating flexible working arrangements, working time accounts, working time regulation, work-life balance, and the four-day week across different cultural contexts." data-fr="Étude des aménagements flexibles du travail, des comptes épargne-temps, de la régulation du temps de travail, de l'équilibre vie-travail et de la semaine de quatre jours." data-de="Untersuchung flexibler Arbeitsregelungen, Arbeitszeitkonten, Arbeitszeitregulierung, Work-Life-Balance und der Vier-Tage-Woche in verschiedenen kulturellen Kontexten.">
+          Investigating flexible working arrangements, working time accounts, working time regulation, work-life balance, and the four-day week across different cultural contexts.
         </p>
       </div>
       <div class="theme-card" onclick="filterByTheme('Labor Mobility')" tabindex="0" role="button" aria-label="Filter by Labor Mobility theme">
         <div class="theme-icon">🌍</div>
         <h3 class="theme-title" data-en="Labor Mobility & Posted Workers" data-fr="Mobilité du travail et travailleurs détachés" data-de="Arbeitsmobilität & Entsendung">Labor Mobility & Posted Workers</h3>
-        <p class="theme-description" data-en="Studying intra-European labor mobility, particularly Portuguese workers in France's construction sector and social regulation frameworks." data-fr="Étude de la mobilité intra-européenne du travail, notamment des travailleurs portugais dans le secteur de la construction en France et des cadres de régulation sociale." data-de="Untersuchung der innereuropäischen Arbeitsmobilität, insbesondere portugiesischer Arbeitnehmer im französischen Bausektor und sozialer Regulierungsrahmen.">
-          Studying intra-European labor mobility, particularly Portuguese workers 
-          in France's construction sector and social regulation frameworks.
+        <p class="theme-description" data-en="Studying labour migration, transnational labour mobility, and posted workers in the EU labour market, particularly in the construction sector." data-fr="Étude de la migration du travail, de la mobilité transnationale et des travailleurs détachés sur le marché du travail européen, notamment dans le secteur de la construction." data-de="Untersuchung von Arbeitsmigration, transnationaler Arbeitsmobilität und entsandten Arbeitnehmern im EU-Arbeitsmarkt, insbesondere im Bausektor.">
+          Studying labour migration, transnational labour mobility, and posted workers in the EU labour market, particularly in the construction sector.
         </p>
       </div>
       <div class="theme-card" onclick="filterByTheme('Remote Work')" tabindex="0" role="button" aria-label="Filter by Remote Work theme">
         <div class="theme-icon">💻</div>
-        <h3 class="theme-title" data-en="Remote Work & Digital Transformation" data-fr="Télétravail et transformation numérique" data-de="Fernarbeit & digitale Transformation">Remote Work & Digital Transformation</h3>
-        <p class="theme-description" data-en="Analyzing telework negotiations, COVID-19's impact on work patterns, and collective bargaining in the digital age." data-fr="Analyse des négociations sur le télétravail, de l'impact du COVID-19 sur les modes de travail et de la négociation collective à l'ère numérique." data-de="Analyse von Telearbeitsverhandlungen, COVID-19-Auswirkungen auf Arbeitsmuster und Tarifverhandlungen im digitalen Zeitalter.">
-          Analyzing telework negotiations, COVID-19's impact on work patterns, 
-          and collective bargaining in the digital age.
+        <h3 class="theme-title" data-en="Remote Work & Digital Transformation" data-fr="Télétravail et transformation numérique" data-de="Mobile Arbeit & digitale Transformation">Remote Work & Digital Transformation</h3>
+        <p class="theme-description" data-en="Analyzing telework and hybrid work negotiations, COVID-19 pandemic impacts on work patterns, collective agreements, and occupational health and safety." data-fr="Analyse des négociations sur le télétravail et le travail hybride, des impacts de la pandémie COVID-19, des accords collectifs et de la santé-sécurité au travail." data-de="Analyse von Telearbeit- und Hybridarbeitsverhandlungen, COVID-19-Auswirkungen auf Arbeitsmuster, Tarifverträge und Arbeitsschutz.">
+          Analyzing telework and hybrid work negotiations, COVID-19 pandemic impacts on work patterns, collective agreements, and occupational health and safety.
         </p>
       </div>
       <div class="theme-card" onclick="filterByTheme('Industrial Relations')" tabindex="0" role="button" aria-label="Filter by Industrial Relations theme">
         <div class="theme-icon">🤝</div>
         <h3 class="theme-title" data-en="Industrial Relations" data-fr="Relations industrielles" data-de="Arbeitsbeziehungen">Industrial Relations</h3>
-        <p class="theme-description" data-en="Comparative studies between France and Germany on company-level negotiations and working time regulations." data-fr="Études comparatives entre la France et l'Allemagne sur les négociations au niveau de l'entreprise et les réglementations du temps de travail." data-de="Vergleichsstudien zwischen Frankreich und Deutschland zu Verhandlungen auf Unternehmensebene und Arbeitszeitregelungen.">
-          Comparative studies between France and Germany on company-level 
-          negotiations and working time regulations.
+        <p class="theme-description" data-en="Comparative studies of collective bargaining, trade unions, company-level negotiations, and employment relations in France and Germany." data-fr="Études comparatives de la négociation collective, des syndicats, des négociations d'entreprise et des relations d'emploi en France et en Allemagne." data-de="Vergleichende Studien zu Tarifverhandlungen, Gewerkschaften, betrieblichen Verhandlungen und Beschäftigungsbeziehungen in Frankreich und Deutschland.">
+          Comparative studies of collective bargaining, trade unions, company-level negotiations, and employment relations in France and Germany.
         </p>
       </div>
       <div class="theme-card" onclick="filterByTheme('Social Regulation')" tabindex="0" role="button" aria-label="Filter by Social Regulation theme">
         <div class="theme-icon">📊</div>
         <h3 class="theme-title" data-en="Social Regulation Theory" data-fr="Théorie de la régulation sociale" data-de="Soziale Regulierungstheorie">Social Regulation Theory</h3>
-        <p class="theme-description" data-en="Developing Jean-Daniel Reynaud's theory of autonomous vs control regulation in organizational contexts." data-fr="Développement de la théorie de Jean-Daniel Reynaud sur la régulation autonome versus régulation de contrôle dans les contextes organisationnels." data-de="Entwicklung von Jean-Daniel Reynauds Theorie der autonomen versus Kontrollregulierung in organisatorischen Kontexten.">
-          Developing Jean-Daniel Reynaud's theory of autonomous vs control 
-          regulation in organizational contexts.
+        <p class="theme-description" data-en="Developing Jean-Daniel Reynaud's theory of autonomous versus control regulation in organizational and employment contexts." data-fr="Développement de la théorie de Jean-Daniel Reynaud sur la régulation autonome et de contrôle dans les contextes organisationnels et d'emploi." data-de="Weiterentwicklung von Jean-Daniel Reynauds Theorie der autonomen und Kontrollregulierung in Organisations- und Beschäftigungskontexten.">
+          Developing Jean-Daniel Reynaud's theory of autonomous versus control regulation in organizational and employment contexts.
         </p>
       </div>
       <div class="theme-card" onclick="filterByTheme('Temporalities')" tabindex="0" role="button" aria-label="Filter by Temporalities theme">
         <div class="theme-icon">📖</div>
         <h3 class="theme-title" data-en="Temporalities & Social Sciences" data-fr="Temporalités et sciences sociales" data-de="Temporalitäten & Sozialwissenschaften">Temporalities & Social Sciences</h3>
-        <p class="theme-description" data-en="Examining temporal dimensions of society, work temporalities, and methodological approaches to time in social research." data-fr="Examen des dimensions temporelles de la société, des temporalités du travail et des approches méthodologiques du temps dans la recherche sociale." data-de="Untersuchung zeitlicher Dimensionen der Gesellschaft, Arbeitstemporalitäten und methodologischer Ansätze zur Zeit in der Sozialforschung.">
-          Examining temporal dimensions of society, work temporalities, and 
-          methodological approaches to time in social research.
+        <p class="theme-description" data-en="Examining social times, temporal norms, work temporalities, and methodological approaches to studying time in society." data-fr="Étude des temps sociaux, des normes temporelles, des temporalités du travail et des approches méthodologiques pour étudier le temps dans la société." data-de="Untersuchung sozialer Zeiten, zeitlicher Normen, Arbeitstemporalitäten und methodischer Ansätze zur Erforschung von Zeit in der Gesellschaft.">
+          Examining social times, temporal norms, work temporalities, and methodological approaches to studying time in society.
         </p>
       </div>
       <div class="theme-card" onclick="filterByTheme('Future of Work')" tabindex="0" role="button" aria-label="Filter by Future of Work theme">
         <div class="theme-icon">🚀</div>
         <h3 class="theme-title" data-en="Future of Work" data-fr="L'avenir du travail" data-de="Zukunft der Arbeit">Future of Work</h3>
-        <p class="theme-description" data-en="Exploring emerging work patterns, technological disruption, and evolving social regulations in contemporary labor markets." data-fr="Explorer les nouvelles formes de travail, les disruptions technologiques et l'évolution des régulations sociales dans les marchés du travail contemporains." data-de="Erforschung aufkommender Arbeitsmuster, technologischer Umbrüche und sich entwickelnder sozialer Regulierungen in zeitgenössischen Arbeitsmärkten.">
-          Exploring emerging work patterns, technological disruption, and evolving 
-          social regulations in contemporary labor markets.
+        <p class="theme-description" data-en="Exploring platform work, gig work, digitalization, AI and automation impacts, and evolving social regulations of precarious employment." data-fr="Exploration du travail de plateforme, du travail à la tâche, de la numérisation, des impacts de l'IA et de l'automatisation, et des régulations sociales de l'emploi précaire." data-de="Erforschung von Plattformarbeit, Gig-Arbeit, Digitalisierung, KI- und Automatisierungsauswirkungen und sich entwickelnder sozialer Regulierung prekärer Beschäftigung.">
+          Exploring platform work, gig work, digitalization, AI and automation impacts, and evolving social regulations of precarious employment.
         </p>
       </div>
     </div>
@@ -932,6 +977,15 @@
           <li>Centre for Future of Work, Taylor's University, Malaysia</li>
         </ul>
       </div>
+      <div class="footer-section">
+        <h3 id="academicProfilesTitle">Academic Profiles</h3>
+        <ul class="academic-links">
+          <li><a href="https://orcid.org/0000-0001-8679-7425" target="_blank" rel="noopener">ORCID (0000-0001-8679-7425)</a></li>
+          <li><a href="https://scholar.google.fr/citations?user=5W48OkIAAAAJ" target="_blank" rel="noopener">Google Scholar – Sociology of work publications</a></li>
+          <li><a href="https://cv.hal.science/jens-thoemmes" target="_blank" rel="noopener">HAL Open Science – Working time and industrial relations</a></li>
+          <li><a href="https://www.researchgate.net/profile/Jens-Thoemmes" target="_blank" rel="noopener">ResearchGate</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 
@@ -943,11 +997,13 @@
     const translations = {
       en: {
         heroSubtitle: "Sociologist & Research Professor",
-        heroBio: "Work sociology, time autonomy, labor mobility, and social regulation theory. Comparative research across France, Germany, and international contexts.",
+        heroBio: "Sociology of work and employment, working time regulation, labour mobility, and social regulation theory. Comparative research on telework, collective bargaining, and the future of work across France, Germany, Europe, and Malaysia.",
+        heroFields: "Research fields: working time, social times, temporalities, remote work, work organization, and posted work.",
         researchTitle: "Research Themes",
         researchSubtitle: "Click on a theme to filter publications",
         publicationsTitle: "Selected Publications",
-        publicationsSubtitle: "Research outputs and contributions (1995-2025)",
+        publicationsSubtitle: "Research outputs and contributions (1995-2026)",
+        publicationsIntro: "76 publications on working time accounts, telework, posted workers, social regulation theory, temporalities, and comparative industrial relations in France, Germany, China, Malaysia, and Europe. Topics include collective bargaining, labour mobility, and the future of work.",
         booksLabel: "Books",
         chaptersLabel: "Book Chapters",
         articlesLabel: "Journal Articles",
@@ -959,6 +1015,7 @@
         halDescription: "More publications are available in open access on HAL Science archives",
         halButton: "View on HAL Science →",
         contactTitle: "Contact",
+        academicProfilesTitle: "Academic Profiles",
         searchPlaceholder: "Search publications...",
         allYears: "All Years",
         allLanguages: "All Languages",
@@ -983,11 +1040,13 @@
       },
       fr: {
         heroSubtitle: "Sociologue et Directeur de recherche",
-        heroBio: "Sociologie du travail, autonomie temporelle, mobilité du travail et théorie de la régulation sociale. Recherche comparative entre la France, l'Allemagne et des contextes internationaux.",
+        heroBio: "Sociologie du travail et de l'emploi, régulation du temps de travail, mobilité du travail, et théorie de la régulation sociale. Recherches comparatives sur le télétravail, la négociation collective et l'avenir du travail en France, Allemagne, Europe et Malaisie.",
+        heroFields: "Domaines de recherche : temps de travail, temps sociaux, temporalités, travail à distance, organisation du travail et travail détaché.",
         researchTitle: "Thèmes de recherche",
         researchSubtitle: "Cliquez sur un thème pour filtrer les publications",
         publicationsTitle: "Publications sélectionnées",
-        publicationsSubtitle: "Production scientifique et contributions (1995-2025)",
+        publicationsSubtitle: "Production scientifique et contributions (1995-2026)",
+        publicationsIntro: "76 publications sur les comptes épargne-temps, le télétravail, les travailleurs détachés, la théorie de la régulation sociale, les temporalités et les relations professionnelles comparées en France, Allemagne, Chine, Malaisie et Europe.",
         booksLabel: "Livres",
         chaptersLabel: "Chapitres de livres",
         articlesLabel: "Articles de revues",
@@ -999,6 +1058,7 @@
         halDescription: "Plus de publications sont disponibles en accès libre sur HAL Science",
         halButton: "Voir sur HAL Science →",
         contactTitle: "Contact",
+        academicProfilesTitle: "Profils académiques",
         searchPlaceholder: "Rechercher des publications...",
         allYears: "Toutes les années",
         allLanguages: "Toutes les langues",
@@ -1023,11 +1083,13 @@
       },
       de: {
         heroSubtitle: "Soziologe und Forschungsprofessor",
-        heroBio: "Arbeitssoziologie, Zeitautonomie, Arbeitsmobilität und soziale Regulierungstheorie. Vergleichende Forschung in Frankreich, Deutschland und internationalen Kontexten.",
+        heroBio: "Arbeits- und Beschäftigungssoziologie, Arbeitszeitregulierung, Arbeitsmobilität und Theorie der sozialen Regulierung. Vergleichende Forschung zu Telearbeit, Tarifverhandlungen und Zukunft der Arbeit in Frankreich, Deutschland, Europa und Malaysia.",
+        heroFields: "Forschungsfelder: Arbeitszeit, soziale Zeiten, Temporalitäten, mobile Arbeit und Homeoffice, Arbeitsorganisation und Entsendung.",
         researchTitle: "Forschungsthemen",
         researchSubtitle: "Klicken Sie auf ein Thema, um Publikationen zu filtern",
         publicationsTitle: "Ausgewählte Publikationen",
-        publicationsSubtitle: "Forschungsergebnisse und Beiträge (1995-2025)",
+        publicationsSubtitle: "Forschungsergebnisse und Beiträge (1995-2026)",
+        publicationsIntro: "76 Publikationen zu Arbeitszeitkonten, Telearbeit, entsandten Arbeitnehmern, Theorie der sozialen Regulierung, Temporalitäten und vergleichenden industriellen Beziehungen in Frankreich, Deutschland, China, Malaysia und Europa.",
         booksLabel: "Bücher",
         chaptersLabel: "Buchkapitel",
         articlesLabel: "Zeitschriftenartikel",
@@ -1039,6 +1101,7 @@
         halDescription: "Weitere Publikationen sind im Open Access auf HAL Science verfügbar",
         halButton: "Auf HAL Science ansehen →",
         contactTitle: "Kontakt",
+        academicProfilesTitle: "Akademische Profile",
         searchPlaceholder: "Publikationen suchen...",
         allYears: "Alle Jahre",
         allLanguages: "Alle Sprachen",
@@ -1161,6 +1224,21 @@
       bookChapters: [
         {
           id: 'pub_ch_1',
+          year: "2025",
+          title: "Les temporalités du travail",
+          authors: "Thoemmes, J.",
+          inBook: "Le travail et la société française",
+          editors: "T. Berthet & D. Mercier (Eds.)",
+          pages: "129-137",
+          publisher: "CNRS Editions",
+          url: "https://shs.hal.science/halshs-05091391",
+          language: "fr",
+          type: "book-chapter",
+          tags: ["Temporalities", "Work Organization", "Social Times"],
+          themes: ["Temporalities"]
+        },
+        {
+          id: 'pub_ch_2',
           year: "2025",
           title: "L'autonomie temporelle à l'épreuve des comptes épargne-temps",
           authors: "Thoemmes, J.",
@@ -1489,6 +1567,35 @@
       journalArticles: [
         {
           id: 'pub_art_1',
+          year: "2025",
+          title: "L'institutionnalisation du télétravail en France après la crise sanitaire : une analyse des différents modèles de négociation collective",
+          authors: "Thoemmes, J.",
+          journal: "La Revue de l'IRES",
+          volume: "1(115)",
+          pages: "119-148",
+          url: "https://hal.science/hal-05389268",
+          language: "fr",
+          type: "journal-article",
+          tags: ["Remote Work", "Telework", "Collective Bargaining", "COVID-19"],
+          themes: ["Remote Work", "Industrial Relations"]
+        },
+        {
+          id: 'pub_art_2',
+          year: "2025",
+          title: "Navigating Hybrid Work in Malaysia: Cultural Adaptation, Workplace Transformation and Technological Mediation",
+          authors: "Thoemmes, J. & Liu, L.",
+          journal: "The Malaysian Journal of Qualitative Research",
+          volume: "11(1)",
+          pages: "96-111",
+          doi: "10.61211/mjqr110108",
+          url: "https://hal.science/hal-05214628",
+          language: "en",
+          type: "journal-article",
+          tags: ["Remote Work", "Hybrid Work", "Malaysia", "Digital Transformation"],
+          themes: ["Remote Work", "Future of Work"]
+        },
+        {
+          id: 'pub_art_3',
           year: "2024",
           title: "Autonomie temporelle : enjeux théoriques",
           authors: "Thoemmes, J.",
@@ -2154,10 +2261,12 @@
       // Update text content
       document.getElementById('heroSubtitle').textContent = t.heroSubtitle;
       document.getElementById('heroBio').textContent = t.heroBio;
+      document.getElementById('heroFields').textContent = t.heroFields;
       document.getElementById('researchTitle').textContent = t.researchTitle;
       document.getElementById('researchSubtitle').textContent = t.researchSubtitle;
       document.getElementById('publicationsTitle').textContent = t.publicationsTitle;
       document.getElementById('publicationsSubtitle').textContent = t.publicationsSubtitle;
+      document.getElementById('publicationsIntro').textContent = t.publicationsIntro;
       document.getElementById('booksLabel').textContent = t.booksLabel;
       document.getElementById('chaptersLabel').textContent = t.chaptersLabel;
       document.getElementById('articlesLabel').textContent = t.articlesLabel;
@@ -2169,6 +2278,7 @@
       document.getElementById('halDescription').textContent = t.halDescription;
       document.getElementById('halButton').textContent = t.halButton;
       document.getElementById('contactTitle').textContent = t.contactTitle;
+      document.getElementById('academicProfilesTitle').textContent = t.academicProfilesTitle;
       document.getElementById('searchInput').placeholder = t.searchPlaceholder;
       
       // Update theme cards
@@ -2446,7 +2556,7 @@
 
     // ============= HAL SYNC FEATURE START =============
     // This code syncs new publications from HAL Science
-    // IMPORTANT: Only checks for publications from 2025 onwards
+    // IMPORTANT: Only checks for publications from 2026 onwards
     // This is to avoid importing all 100+ existing HAL publications
     // and only sync future publications added to HAL
 
@@ -2459,9 +2569,9 @@
 
       async fetchFromHAL() {
         try {
-          // Only get publications from 2025 onwards (for future publications)
+          // Only get publications from 2026 onwards (for future publications)
           const currentYear = new Date().getFullYear();
-          const query = `authIdHal_s:"${this.authorId}" AND producedDateY_i:[2025 TO ${currentYear + 1}]`;
+          const query = `authIdHal_s:"${this.authorId}" AND producedDateY_i:[2026 TO ${currentYear + 1}]`;
           const params = new URLSearchParams({
             q: query,
             wt: 'json',
@@ -2516,7 +2626,7 @@
       syncDiv.style.marginTop = '1rem';
       syncDiv.innerHTML = `
         <button id="halSyncBtn" class="hal-link" style="background: #059669; margin-left: 1rem;">
-          🔄 Check for New Publications (2025+)
+          🔄 Check for New Publications (2026+)
         </button>
         <div id="syncStatus" style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.875rem;"></div>
       `;
@@ -2535,7 +2645,7 @@
       // Show loading
       btn.disabled = true;
       btn.textContent = '⏳ Checking HAL...';
-      status.textContent = 'Checking for publications from 2025 onwards...';
+      status.textContent = 'Checking for publications from 2026 onwards...';
 
       try {
         const halSync = new HALSyncManager();
@@ -2543,13 +2653,6 @@
         
         let newCount = 0;
         for (const halDoc of halDocs) {
-          // Exclure le chapitre problématique de 2025
-          if (halDoc.title_s && halDoc.title_s[0] && 
-              halDoc.title_s[0].includes('épargne') && 
-              halDoc.producedDateY_i === 2025) {
-            continue;
-          }
-          
           const pub = halSync.transformPublication(halDoc);      
           
           // Check if publication already exists
@@ -2599,10 +2702,10 @@
           
           // Show success
           showToast(`Added ${newCount} new publications from HAL!`, 'success');
-          status.textContent = `Found ${newCount} new publications from 2025+`;
+          status.textContent = `Found ${newCount} new publications from 2026+`;
         } else {
-          status.textContent = 'No new publications found from 2025 onwards';
-          showToast('No new publications to add (checking 2025+)', 'info');
+          status.textContent = 'No new publications found from 2026 onwards';
+          showToast('No new publications to add (checking 2026+)', 'info');
         }
         
       } catch (error) {
@@ -2611,7 +2714,7 @@
         showToast('Could not connect to HAL Science', 'error');
       } finally {
         btn.disabled = false;
-        btn.textContent = '🔄 Check for New Publications (2025+)';
+        btn.textContent = '🔄 Check for New Publications (2026+)';
       }
     }
 
