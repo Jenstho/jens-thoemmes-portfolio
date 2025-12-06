@@ -1,8 +1,43 @@
-User-agent: *                                                  
-     Allow: /
+# Robots.txt for jens-thoemmes.com
+# Academic portfolio - fully public and indexable
 
-     # Sitemap location
-     Sitemap: https://jens-thoemmes.com/sitemap.xml
+# General rules for all crawlers
+User-agent: *
+Allow: /
+Allow: /assets/
 
-     # Allow all search engines to crawl the entire site
-     # This academic portfolio is intended to be publicly accessible
+# Sitemap location
+Sitemap: https://jens-thoemmes.com/sitemap.xml
+
+# Google crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /assets/
+
+# Bing crawler
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Academic search engines
+User-agent: Scholarbot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# Social media crawlers (for link previews)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# This academic portfolio is intended to be publicly accessible
+# for researchers, collaborators, and the general public
