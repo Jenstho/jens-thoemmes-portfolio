@@ -2514,9 +2514,9 @@
     // Initialize everything when page loads
     document.addEventListener('DOMContentLoaded', function() {
       initializeFilters();
-      // Sort by year (newest first) before initial render
-      allPublications.sort((a, b) => parseInt(b.year) - parseInt(a.year));
-      renderPublications(allPublications);
+      // Sort and render with proper results info
+      filteredPublications = [...allPublications];
+      filterPublications();
       // Add HAL sync button
       addHALSyncButton();
       // Language selector
