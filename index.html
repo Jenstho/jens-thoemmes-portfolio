@@ -2514,6 +2514,8 @@
     // Initialize everything when page loads
     document.addEventListener('DOMContentLoaded', function() {
       initializeFilters();
+      // Sort by year (newest first) before initial render
+      allPublications.sort((a, b) => parseInt(b.year) - parseInt(a.year));
       renderPublications(allPublications);
       // Add HAL sync button
       addHALSyncButton();
