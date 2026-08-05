@@ -27,12 +27,10 @@
   <meta name="theme-color" content="#0891b2">
   <!-- Google Scholar meta tags -->
   <meta name="citation_author" content="Thoemmes, Jens">
-  <meta name="citation_author_institution" content="CNRS, CERTOP, Université Toulouse II">
+  <meta name="citation_author_institution" content="CNRS, UTOPI (UMR 5311), Université Toulouse II">
   <meta name="DC.creator" content="Jens Thoemmes">
   <meta name="DC.subject" content="Sociology of Work; Working Time; Industrial Relations; Telework">
   <link rel="canonical" href="https://jens-thoemmes.com/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <title>Jens Thoemmes - Sociologist & Research Professor</title>
 
   <!-- Structured Data for Academic Profile -->
@@ -47,7 +45,6 @@
     "sameAs": [
       "https://cv.hal.science/jens-thoemmes",
       "https://www.researchgate.net/profile/Jens-Thoemmes",
-      "https://certop.cnrs.fr/thoemmes-jens/",
       "https://orcid.org/0000-0001-8679-7425",
       "https://scholar.google.fr/citations?user=5W48OkIAAAAJ"
     ],
@@ -59,8 +56,8 @@
       },
       {
         "@type": "Organization",
-        "name": "CERTOP - Centre d'Etude et Recherche Travail Organisation Pouvoir",
-        "url": "https://certop.cnrs.fr/"
+        "name": "UTOPI - Unité de recherche Transitions, Organisations, Politiques, Inégalités (UMR 5311)",
+        "url": "https://utopi.cnrs.fr/"
       },
       {
         "@type": "Organization",
@@ -221,7 +218,9 @@
       top: 0;
       width: 100%;
       background: var(--bg-main);
-      backdrop-filter: blur(10px);
+      /* No backdrop-filter here: it makes .nav a containing block for fixed
+         descendants, which breaks the mobile .nav-controls panel. The nav
+         background is opaque, so a blur would have no visual effect anyway. */
       border-bottom: 1px solid var(--border);
       z-index: 1000;
       padding: 1rem 2rem;
@@ -865,7 +864,7 @@
       </p>
       <div class="position-badges">
         <span class="position-badge">CNRS Senior Researcher</span>
-        <span class="position-badge">CERTOP - Université Toulouse II</span>
+        <span class="position-badge">UTOPI - Université Toulouse II</span>
         <span class="position-badge">CFW - Taylor's University Malaysia</span>
       </div>
     </div>
@@ -874,7 +873,7 @@
   <!-- Publications Section -->
   <section id="publications" class="main-container">
     <div class="section-header">
-      <h2 id="publicationsTitle">Selected Publications</h2>
+      <h2 id="publicationsTitle">Publications</h2>
       <p id="publicationsSubtitle">Research outputs and contributions (1995-2026)</p>
       <p class="publications-intro" id="publicationsIntro">
         76 publications on working time accounts, telework, posted workers, social regulation theory, temporalities, and comparative industrial relations in France, Germany, China, Malaysia, and Europe. Topics include collective bargaining, labour mobility, and the future of work.
@@ -992,11 +991,21 @@
 
     <!-- HAL Access Info -->
     <div class="hal-info">
-      <h3>🔓 <span id="halTitle">Access Full Publications</span></h3>
+      <h3><span id="halTitle">Access Full Publications</span></h3>
       <p id="halDescription">More publications are available in open access on HAL Science archives</p>
       <a href="https://hal.science/search/index/?q=Jens+Thoemmes" target="_blank" rel="noopener noreferrer" class="hal-link" aria-label="View publications on HAL Science (opens in new tab)">
         <span id="halButton">View on HAL Science →</span>
       </a>
+    </div>
+
+    <!-- Export -->
+    <div class="hal-info" style="margin-top: 2rem;">
+      <h3><span id="exportTitle">Export Publications</span></h3>
+      <p id="exportDesc">Download the full publication list as a BibTeX file</p>
+      <button type="button" class="hal-link" style="border: none; cursor: pointer; font: inherit;"
+              onclick="downloadFile(generateBibTeX(), 'thoemmes-publications.bib', 'text/plain'); showToast('BibTeX downloaded', 'success');">
+        BibTeX
+      </button>
     </div>
 
     <!-- Results Info -->
@@ -1027,7 +1036,7 @@
       <div class="footer-section">
         <h3 id="contactTitle">Contact</h3>
         <ul class="footer-links">
-          <li>CERTOP-CNRS</li>
+          <li>UTOPI (UMR 5311, CNRS)</li>
           <li>Université Toulouse II - Jean Jaurès</li>
           <li>Centre for Future of Work, Taylor's University, Malaysia</li>
         </ul>
@@ -1056,9 +1065,9 @@
         heroFields: "Research fields: working time, social times, temporalities, remote work, work organization, and posted work.",
         researchTitle: "Research Themes",
         researchSubtitle: "Click on a theme to filter publications",
-        publicationsTitle: "Selected Publications",
+        publicationsTitle: "Publications",
         publicationsSubtitle: "Research outputs and contributions (1995-2026)",
-        publicationsIntro: "76 publications on working time accounts, telework, posted workers, social regulation theory, temporalities, and comparative industrial relations in France, Germany, China, Malaysia, and Europe. Topics include collective bargaining, labour mobility, and the future of work.",
+        publicationsIntro: "{count} publications on working time accounts, telework, posted workers, social regulation theory, temporalities, and comparative industrial relations in France, Germany, China, Malaysia, and Europe. Topics include collective bargaining, labour mobility, and the future of work.",
         booksLabel: "Books",
         chaptersLabel: "Book Chapters",
         articlesLabel: "Journal Articles",
@@ -1091,6 +1100,14 @@
           "conference": "Conference Papers",
           "report": "Reports",
           "preprint": "Preprints"
+        },
+        typeLabelsSingular: {
+          "book": "Book",
+          "book-chapter": "Book Chapter",
+          "journal-article": "Journal Article",
+          "conference": "Conference Paper",
+          "report": "Report",
+          "preprint": "Preprint"
         }
       },
       fr: {
@@ -1099,9 +1116,9 @@
         heroFields: "Domaines de recherche : temps de travail, temps sociaux, temporalités, travail à distance, organisation du travail et travail détaché.",
         researchTitle: "Thèmes de recherche",
         researchSubtitle: "Cliquez sur un thème pour filtrer les publications",
-        publicationsTitle: "Publications sélectionnées",
+        publicationsTitle: "Publications",
         publicationsSubtitle: "Production scientifique et contributions (1995-2026)",
-        publicationsIntro: "76 publications sur les comptes épargne-temps, le télétravail, les travailleurs détachés, la théorie de la régulation sociale, les temporalités et les relations professionnelles comparées en France, Allemagne, Chine, Malaisie et Europe.",
+        publicationsIntro: "{count} publications sur les comptes épargne-temps, le télétravail, les travailleurs détachés, la théorie de la régulation sociale, les temporalités et les relations professionnelles comparées en France, Allemagne, Chine, Malaisie et Europe.",
         booksLabel: "Livres",
         chaptersLabel: "Chapitres de livres",
         articlesLabel: "Articles de revues",
@@ -1134,6 +1151,14 @@
           "conference": "Communications",
           "report": "Rapports",
           "preprint": "Prépublications"
+        },
+        typeLabelsSingular: {
+          "book": "Livre",
+          "book-chapter": "Chapitre de livre",
+          "journal-article": "Article de revue",
+          "conference": "Communication",
+          "report": "Rapport",
+          "preprint": "Prépublication"
         }
       },
       de: {
@@ -1142,9 +1167,9 @@
         heroFields: "Forschungsfelder: Arbeitszeit, soziale Zeiten, Temporalitäten, mobile Arbeit und Homeoffice, Arbeitsorganisation und Entsendung.",
         researchTitle: "Forschungsthemen",
         researchSubtitle: "Klicken Sie auf ein Thema, um Publikationen zu filtern",
-        publicationsTitle: "Ausgewählte Publikationen",
+        publicationsTitle: "Publikationen",
         publicationsSubtitle: "Forschungsergebnisse und Beiträge (1995-2026)",
-        publicationsIntro: "76 Publikationen zu Arbeitszeitkonten, Telearbeit, entsandten Arbeitnehmern, Theorie der sozialen Regulierung, Temporalitäten und vergleichenden industriellen Beziehungen in Frankreich, Deutschland, China, Malaysia und Europa.",
+        publicationsIntro: "{count} Publikationen zu Arbeitszeitkonten, Telearbeit, entsandten Arbeitnehmern, Theorie der sozialen Regulierung, Temporalitäten und vergleichenden industriellen Beziehungen in Frankreich, Deutschland, China, Malaysia und Europa.",
         booksLabel: "Bücher",
         chaptersLabel: "Buchkapitel",
         articlesLabel: "Zeitschriftenartikel",
@@ -1177,6 +1202,14 @@
           "conference": "Konferenzbeiträge",
           "report": "Berichte",
           "preprint": "Vorabdrucke"
+        },
+        typeLabelsSingular: {
+          "book": "Buch",
+          "book-chapter": "Buchkapitel",
+          "journal-article": "Zeitschriftenartikel",
+          "conference": "Konferenzbeitrag",
+          "report": "Bericht",
+          "preprint": "Vorabdruck"
         }
       }
     };
@@ -2311,6 +2344,7 @@
 
     function updateLanguage(lang) {
       currentLanguage = lang;
+      document.documentElement.lang = lang;
       const t = translations[lang];
       
       // Update text content
@@ -2321,7 +2355,8 @@
       document.getElementById('researchSubtitle').textContent = t.researchSubtitle;
       document.getElementById('publicationsTitle').textContent = t.publicationsTitle;
       document.getElementById('publicationsSubtitle').textContent = t.publicationsSubtitle;
-      document.getElementById('publicationsIntro').textContent = t.publicationsIntro;
+      document.getElementById('publicationsIntro').textContent =
+        t.publicationsIntro.replace('{count}', allPublications.length);
       document.getElementById('booksLabel').textContent = t.booksLabel;
       document.getElementById('chaptersLabel').textContent = t.chaptersLabel;
       document.getElementById('articlesLabel').textContent = t.articlesLabel;
@@ -2370,14 +2405,32 @@
       const exportDesc = document.getElementById('exportDesc');
       if (exportTitle && exportDesc) {
         const exportTranslations = {
-          en: { title: 'Export Publications', desc: 'Download your publications in various formats' },
-          fr: { title: 'Exporter les publications', desc: 'Téléchargez vos publications dans différents formats' },
-          de: { title: 'Publikationen exportieren', desc: 'Laden Sie Ihre Publikationen in verschiedenen Formaten herunter' }
+          en: { title: 'Export Publications', desc: 'Download the full publication list as a BibTeX file' },
+          fr: { title: 'Exporter les publications', desc: 'Télécharger la liste complète des publications au format BibTeX' },
+          de: { title: 'Publikationen exportieren', desc: 'Die vollständige Publikationsliste als BibTeX-Datei herunterladen' }
         };
         const et = exportTranslations[lang] || exportTranslations.en;
         exportTitle.textContent = et.title;
         exportDesc.textContent = et.desc;
       }
+    }
+
+    // Stat-card counts are derived from the data so they cannot drift out of sync
+    function updateCounts() {
+      const byType = type => allPublications.filter(p => p.type === type).length;
+      const counts = {
+        booksCount: byType('book'),
+        chaptersCount: byType('book-chapter'),
+        articlesCount: byType('journal-article'),
+        conferenceCount: byType('conference'),
+        reportsCount: byType('report'),
+        preprintsCount: byType('preprint'),
+        totalCount: allPublications.length
+      };
+      Object.keys(counts).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = counts[id];
+      });
     }
 
     function updateResultsInfo() {
@@ -2478,7 +2531,7 @@
           </div>
           ${pub.authors ? `<div class="publication-authors">${pub.authors}</div>` : ''}
           <div class="publication-meta">
-            <span>${t.typeLabels[pub.type] || pub.type.replace('-', ' ')}</span>
+            <span>${(t.typeLabelsSingular && t.typeLabelsSingular[pub.type]) || t.typeLabels[pub.type] || pub.type.replace('-', ' ')}</span>
             <span>•</span>
             <span>${pub.language.toUpperCase()}</span>
             ${pub.journal ? `<span>•</span><span>${pub.journal}</span>` : ''}
@@ -2572,8 +2625,9 @@
       // Sort and render with proper results info
       filteredPublications = [...allPublications];
       filterPublications();
-      // Add HAL sync button
-      addHALSyncButton();
+      // Derive counts and apply translated strings from the data
+      updateCounts();
+      updateLanguage(currentLanguage);
       // Language selector
       document.getElementById('languageSelect').addEventListener('change', function() {
         updateLanguage(this.value);
@@ -2611,171 +2665,8 @@
       }
     });
 
-    // ============= HAL SYNC FEATURE START =============
-    // This code syncs new publications from HAL Science
-    // IMPORTANT: Only checks for publications from 2026 onwards
-    // This is to avoid importing all 100+ existing HAL publications
-    // and only sync future publications added to HAL
 
-    // HAL Sync Manager
-    class HALSyncManager {
-      constructor() {
-        this.authorId = "jens-thoemmes";
-        this.baseURL = "https://api.archives-ouvertes.fr/search/";
-      }
-
-      async fetchFromHAL() {
-        try {
-          // Only get publications from 2026 onwards (for future publications)
-          const currentYear = new Date().getFullYear();
-          const query = `authIdHal_s:"${this.authorId}" AND producedDateY_i:[2026 TO ${currentYear + 1}]`;
-          const params = new URLSearchParams({
-            q: query,
-            wt: 'json',
-            fl: 'docid,title_s,authFullName_s,producedDateY_i,journalTitle_s,docType_s,uri_s',
-            rows: 50,  // Reduced since we're only checking new ones
-            sort: 'producedDate_tdate desc'
-          });
-
-          const response = await fetch(`${this.baseURL}?${params}`);
-          if (!response.ok) throw new Error('HAL API error');
-          
-          const data = await response.json();
-          return data.response.docs;
-        } catch (error) {
-          console.error('HAL fetch error:', error);
-          return [];
-        }
-      }
-
-      transformPublication(halDoc) {
-        const typeMap = {
-          'ART': 'journal-article',
-          'COUV': 'book-chapter',
-          'OUV': 'book',
-          'COMM': 'conference',
-          'REPORT': 'report'
-        };
-
-        return {
-          id: `hal_${halDoc.docid}`,
-          year: halDoc.producedDateY_i?.toString() || '2024',
-          title: Array.isArray(halDoc.title_s) ? halDoc.title_s[0] : halDoc.title_s,
-          authors: Array.isArray(halDoc.authFullName_s) ? 
-            halDoc.authFullName_s.join(', ') : 'Thoemmes, J.',
-          journal: halDoc.journalTitle_s || '',
-          url: halDoc.uri_s,
-          type: typeMap[halDoc.docType_s] || 'journal-article',
-          language: 'en',
-          tags: ['From HAL'],
-          themes: []
-        };
-      }
-    }
-
-    // Create sync button function
-    function addHALSyncButton() {
-      const halInfo = document.querySelector('.hal-info');
-      if (!halInfo) return;
-
-      // Add sync button
-      const syncDiv = document.createElement('div');
-      syncDiv.style.marginTop = '1rem';
-      syncDiv.innerHTML = `
-        <button id="halSyncBtn" class="hal-link" style="background: #059669; margin-left: 1rem;">
-          🔄 Check for New Publications (2026+)
-        </button>
-        <div id="syncStatus" style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.875rem;"></div>
-      `;
-      
-      halInfo.appendChild(syncDiv);
-
-      // Add click handler
-      document.getElementById('halSyncBtn').addEventListener('click', syncWithHAL);
-    }
-
-    // Sync function
-    async function syncWithHAL() {
-      const btn = document.getElementById('halSyncBtn');
-      const status = document.getElementById('syncStatus');
-      
-      // Show loading
-      btn.disabled = true;
-      btn.textContent = '⏳ Checking HAL...';
-      status.textContent = 'Checking for publications from 2026 onwards...';
-
-      try {
-        const halSync = new HALSyncManager();
-        const halDocs = await halSync.fetchFromHAL();
-        
-        let newCount = 0;
-        for (const halDoc of halDocs) {
-          const pub = halSync.transformPublication(halDoc);      
-          
-          // Check if publication already exists
-                   const exists = allPublications.some(p => {
-  // Normalise les titres en enlevant ponctuation et espaces multiples
-  const normalizeTitle = (title) => title.toLowerCase()
-    .replace(/[^\w\sàâäéèêëïîôùûüÿæœç]/g, '')
-    .replace(/\s+/g, '')  // <-- Enlève TOUS les espaces
-    .trim();
-  
-  return normalizeTitle(p.title) === normalizeTitle(pub.title) && 
-         p.year === pub.year;
-});          if (!exists && pub.title) {
-            // Add to main array
-            allPublications.push(pub);
-            newCount++;
-            
-            // Add to appropriate category
-            switch(pub.type) {
-              case 'journal-article':
-                publicationsData.journalArticles.push(pub);
-                break;
-              case 'book':
-                publicationsData.books.push(pub);
-                break;
-              case 'book-chapter':
-                publicationsData.bookChapters.push(pub);
-                break;
-              // Add other types as needed
-            }
-          }
-        }
-        
-        if (newCount > 0) {
-          // Update counts
-          document.getElementById('articlesCount').textContent = 
-            publicationsData.journalArticles.length;
-          document.getElementById('booksCount').textContent = 
-            publicationsData.books.length;
-          document.getElementById('chaptersCount').textContent = 
-            publicationsData.bookChapters.length;
-          document.getElementById('totalCount').textContent = 
-            allPublications.length;
-          
-          // Re-render
-          filterPublications();
-          
-          // Show success
-          showToast(`Added ${newCount} new publications from HAL!`, 'success');
-          status.textContent = `Found ${newCount} new publications from 2026+`;
-        } else {
-          status.textContent = 'No new publications found from 2026 onwards';
-          showToast('No new publications to add (checking 2026+)', 'info');
-        }
-        
-      } catch (error) {
-        console.error('Sync error:', error);
-        status.textContent = 'Error connecting to HAL';
-        showToast('Could not connect to HAL Science', 'error');
-      } finally {
-        btn.disabled = false;
-        btn.textContent = '🔄 Check for New Publications (2026+)';
-      }
-    }
-
-    // ============= HAL SYNC FEATURE END =============    // Data extraction utility - FIXED VERSION
+        // Data extraction utility - FIXED VERSION
     window.extractPublicationsData = function() {
       try {
         const data = {
@@ -2931,69 +2822,6 @@
       showToast('Manual copy mode: Select all and press Ctrl+C', 'warning');
     }
 
-    // Add extraction button (temporary for migration)
-    const nav = document.querySelector('.nav-controls');
-    const extractBtn = document.createElement('button');
-    extractBtn.textContent = '📤 Extract Data';
-    extractBtn.onclick = function() {
-      // Visual feedback
-      extractBtn.textContent = '⏳ Extracting...';
-      extractBtn.disabled = true;
-      
-      // Try extraction
-      extractPublicationsData();
-      
-      // Reset button after delay
-      setTimeout(() => {
-        extractBtn.textContent = '📤 Extract Data';
-        extractBtn.disabled = false;
-      }, 2000);
-    };
-    extractBtn.className = 'theme-toggle';
-    extractBtn.setAttribute('aria-label', 'Extract publications data');
-    extractBtn.style.background = '#059669';
-    extractBtn.title = 'Download all publications as JSON file';
-    nav.appendChild(extractBtn);
-    
-    // Add alternative copy button
-    const copyBtn = document.createElement('button');
-    copyBtn.textContent = '📋 Copy Data';
-    copyBtn.onclick = function() {
-      const data = {
-        publications: allPublications,
-        metadata: {
-          totalCount: allPublications.length,
-          lastModified: new Date().toISOString(),
-          types: [...new Set(allPublications.map(p => p.type))],
-          years: [...new Set(allPublications.map(p => p.year))].sort((a, b) => b - a),
-          languages: [...new Set(allPublications.map(p => p.language))],
-          themes: [...new Set(allPublications.flatMap(p => p.themes || []))]
-        }
-      };
-      
-      const jsonString = JSON.stringify(data, null, 2);
-      
-      // Try modern clipboard API first
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(jsonString).then(() => {
-          showToast('✅ Data copied to clipboard! Paste into a text editor and save as .json', 'success');
-          copyBtn.textContent = '✅ Copied!';
-          setTimeout(() => {
-            copyBtn.textContent = '📋 Copy Data';
-          }, 2000);
-        }).catch(() => {
-          fallbackCopyToClipboard(jsonString);
-        });
-      } else {
-        fallbackCopyToClipboard(jsonString);
-      }
-    };
-    copyBtn.className = 'theme-toggle';
-    copyBtn.setAttribute('aria-label', 'Copy publications data to clipboard');
-    copyBtn.style.background = '#7c3aed';
-    copyBtn.title = 'Copy all publications data to clipboard';
-    nav.appendChild(copyBtn);
-    
     // Also add keyboard shortcut for extraction (Ctrl+Shift+E)
     document.addEventListener('keydown', function(e) {
       if (e.ctrlKey && e.shiftKey && e.key === 'E') {
@@ -3003,7 +2831,7 @@
     });
     
     // Log helpful message
-    console.log('💡 Tip: Click the green "Extract Data" button or press Ctrl+Shift+E to download your publications data.');
+    console.log('Tip: press Ctrl+Shift+E to download the publications data as JSON.');
     console.log('📋 If download fails, the data will be copied to clipboard and shown in a modal for manual copying.');
     
     // Make data easily accessible from console
@@ -3068,123 +2896,6 @@
       return bibtex;
     }
 
-    // Generate CSV for Excel
-    function generateCSV() {
-      const headers = ['Year', 'Title', 'Authors', 'Type', 'Journal/Book', 'Volume', 'Pages', 'Publisher', 'Language', 'URL'];
-      
-      const rows = allPublications.map(pub => [
-        pub.year,
-        `"${pub.title.replace(/"/g, '""')}"`,
-        `"${pub.authors.replace(/"/g, '""')}"`,
-        pub.type,
-        `"${(pub.journal || pub.inBook || pub.conference || '').replace(/"/g, '""')}"`,
-        pub.volume || '',
-        pub.pages || '',
-        `"${(pub.publisher || '').replace(/"/g, '""')}"`,
-        pub.language.toUpperCase(),
-        pub.url || ''
-      ]);
-      
-      return [headers.join(','), ...rows.map(row => row.join(','))].join('\n');
-    }
-
-    // Generate formatted text for Word/Google Docs
-    function generateFormattedText() {
-      let text = 'PUBLICATIONS - Jens Thoemmes\n';
-      text += '================================\n\n';
-      
-      const types = {
-        'book': 'BOOKS',
-        'book-chapter': 'BOOK CHAPTERS',
-        'journal-article': 'JOURNAL ARTICLES',
-        'conference': 'CONFERENCE PAPERS',
-        'report': 'REPORTS',
-        'preprint': 'PREPRINTS'
-      };
-      
-      Object.entries(types).forEach(([type, heading]) => {
-        const pubs = allPublications.filter(p => p.type === type);
-        if (pubs.length > 0) {
-          text += `${heading} (${pubs.length})\n`;
-          text += '-'.repeat(heading.length + 4) + '\n\n';
-          
-          pubs.forEach((pub, index) => {
-            text += `${index + 1}. ${pub.authors} (${pub.year}). ${pub.title}. `;
-            
-            if (pub.journal) text += `${pub.journal}`;
-            if (pub.volume) text += `, ${pub.volume}`;
-            if (pub.pages) text += `, ${pub.pages}`;
-            if (pub.publisher) text += `. ${pub.publisher}`;
-            if (pub.inBook) text += `In ${pub.inBook}`;
-            if (pub.editors) text += ` (${pub.editors})`;
-            
-            text += '.\n';
-            if (pub.url) text += `   URL: ${pub.url}\n`;
-            text += '\n';
-          });
-          
-          text += '\n';
-        }
-      });
-      
-      text += `\nTotal Publications: ${allPublications.length}\n`;
-      text += `Generated: ${new Date().toLocaleDateString()}\n`;
-      
-      return text;
-    }
-
-    // Generate APA format citations
-    function generateAPAList() {
-      let text = 'PUBLICATIONS - Jens Thoemmes\n';
-      text += 'APA Format\n';
-      text += '================================\n\n';
-      
-      // Sort by year (newest first), then by title
-      const sorted = [...allPublications].sort((a, b) => {
-        if (b.year !== a.year) return b.year - a.year;
-        return a.title.localeCompare(b.title);
-      });
-      
-      sorted.forEach(pub => {
-        // Format authors for APA (Last, F. I.)
-        const authorParts = pub.authors.split(', ');
-        const apaAuthors = authorParts.map(author => {
-          const names = author.trim().split(' ');
-          if (names.length > 1) {
-            const last = names[names.length - 1];
-            const initials = names.slice(0, -1).map(n => n[0] + '.').join(' ');
-            return `${last}, ${initials}`;
-          }
-          return author;
-        }).join(', ');
-        
-        text += `${apaAuthors} (${pub.year}). `;
-        
-        // Title formatting depends on type
-        if (pub.type === 'book') {
-          text += `*${pub.title}*. `;
-          if (pub.publisher) text += `${pub.publisher}.`;
-        } else if (pub.type === 'journal-article') {
-          text += `${pub.title}. `;
-          if (pub.journal) text += `*${pub.journal}*`;
-          if (pub.volume) text += `, *${pub.volume}*`;
-          if (pub.pages) text += `, ${pub.pages}`;
-          text += '.';
-        } else if (pub.type === 'book-chapter') {
-          text += `${pub.title}. `;
-          if (pub.inBook) text += `In ${pub.editors ? pub.editors + ' ' : ''}*${pub.inBook}*`;
-          if (pub.pages) text += ` (pp. ${pub.pages})`;
-          if (pub.publisher) text += `. ${pub.publisher}`;
-          text += '.';
-        }
-        
-        if (pub.url) text += ` ${pub.url}`;
-        text += '\n\n';
-      });
-      
-      return text;
-    }
-
     // Download helper
     function downloadFile(content, filename, mimeType) {
       const blob = new Blob([content], { type: mimeType });
@@ -3200,34 +2911,6 @@
       }, 100);
     }
 
-    // Add export buttons to page
-    setTimeout(() => {
-      const halInfo = document.querySelector('.hal-info');
-      if (halInfo) {
-        const exportSection = document.createElement('div');
-        exportSection.className = 'hal-info';
-        exportSection.style.marginTop = '2rem';
-        exportSection.innerHTML = `
-          <h3>📥 <span id="exportTitle">Export Publications</span></h3>
-          <p id="exportDesc">Download your publications in various formats</p>
-          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
-            <button onclick="downloadFile(generateBibTeX(), 'thoemmes-publications.bib', 'text/plain'); showToast('BibTeX downloaded!', 'success');" class="action-button" style="background: #0891b2; color: white; border: none; padding: 0.75rem 1.5rem;">
-              📚 BibTeX
-            </button>
-            <button onclick="downloadFile(generateCSV(), 'thoemmes-publications.csv', 'text/csv'); showToast('CSV downloaded!', 'success');" class="action-button" style="background: #10b981; color: white; border: none; padding: 0.75rem 1.5rem;">
-              📊 Excel CSV
-            </button>
-            <button onclick="downloadFile(generateFormattedText(), 'thoemmes-publications.txt', 'text/plain'); showToast('Text file downloaded!', 'success');" class="action-button" style="background: #8b5cf6; color: white; border: none; padding: 0.75rem 1.5rem;">
-              📄 Word/Text
-            </button>
-            <button onclick="downloadFile(generateAPAList(), 'thoemmes-publications-apa.txt', 'text/plain'); showToast('APA format downloaded!', 'success');" class="action-button" style="background: #dc2626; color: white; border: none; padding: 0.75rem 1.5rem;">
-              📝 APA Format
-            </button>
-          </div>
-        `;
-        halInfo.parentNode.insertBefore(exportSection, halInfo.nextSibling);
-      }
-    }, 1000);
   </script>
 </body>
 </html>
