@@ -12,6 +12,23 @@ served by GitHub Pages from the repository root.
 | `assets/` | Social card image. |
 | `sitemap.xml` | Page anchors plus every full-text PDF. |
 | `robots.txt`, `CNAME` | Crawler rules, custom domain. |
+| `tools/render-static.js` | Regenerates the static copy of the publication list. See below. |
+
+## After changing publicationsData, run this
+
+```sh
+node tools/render-static.js
+```
+
+The list is drawn by `renderPublications()` at runtime, so a crawler that does not execute
+JavaScript would otherwise see a page with no publications on it. Google Search renders JS;
+Google Scholar's crawler and most AI fetchers do not. This script writes the same cards into
+`#publicationsList` as plain HTML, between two markers. On load the runtime replaces them with
+identical output, so a human visitor sees no difference.
+
+Skipping it fails silently: the page looks perfect in a browser while every crawler reads a
+stale list. The script needs no network and calls no external API, so unlike a HAL sync script
+it cannot break when someone else's service changes.
 
 Publication records live in the `publicationsData` object inside `index.html`, grouped into
 `books`, `bookChapters`, `journalArticles`, `conferencePapers`, `technicalReports` and
