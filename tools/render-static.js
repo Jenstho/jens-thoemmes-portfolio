@@ -40,9 +40,9 @@ if (start === -1 || end === -1) {
   console.error('Could not locate the data block in index.html. Has the file been restructured?');
   process.exit(1);
 }
-const { translations, publicationsData, recordLabel, citeHtml } =
+const { translations, publicationsData, recordLabel, cardExtrasHtml } =
   new Function(scripts.slice(start, end) +
-    '; return { translations, publicationsData, recordLabel, citeHtml };')();
+    '; return { translations, publicationsData, recordLabel, cardExtrasHtml };')();
 
 const all = Object.values(publicationsData).flat()
   .sort((a, b) => parseInt(b.year) - parseInt(a.year));
@@ -82,7 +82,7 @@ ${pub.editors ? `        <div style="margin-top: 0.5rem; font-style: italic; col
 ${pub.tags.map(tag => `          <span class="publication-tag">${esc(tag)}</span>`).join('\n')}
         </div>\n` : ''}        <div class="publication-actions">
 ${pub.fullText ? `          <a href="${esc(pub.fullText)}" target="_blank" rel="noopener noreferrer" class="action-button action-button-primary">${esc(t.viewFullText)}</a>\n` : ''}${pub.doi && pub.doiResolves !== false && !pub.url.includes('ssrn.com') ? `          <a href="https://doi.org/${esc(pub.doi)}" target="_blank" rel="noopener noreferrer" class="action-button">${esc(t.viewPublished)}</a>\n` : ''}${pub.url ? `          <a href="${esc(pub.url)}" target="_blank" rel="noopener noreferrer" class="action-button">${esc(recordLabel(pub, t))}</a>\n` : ''}        </div>
-        ${citeHtml(pub, t)}
+        ${cardExtrasHtml(pub, t)}
       </div>`;
 
 const block = [BEGIN, ...all.map(card), END].join('\n');

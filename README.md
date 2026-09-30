@@ -44,6 +44,12 @@ Fields used per entry:
   "View PDF", otherwise "Publisher's page"). See `recordLabel()`.
 - `doi`: bare DOI. Renders a "Published version" button linking to `https://doi.org/<doi>`,
   and is exported in BibTeX.
+- `fullTextPages`: `"published"` when the self-hosted PDF carries the page numbers of the
+  published version, `"differ"` when it is an author manuscript with its own numbering. The
+  card then says so under the buttons, because a reader quoting a page needs to know. Leave it
+  unset when the entry has no page range to compare against (online journals, most books).
+  HAL's own declaration of the file type is not a substitute: `halshs-05091388` is declared a
+  publisher file and is a manuscript. Check the printed numbers in the PDF.
 - `doiResolves: false`: suppresses the button for a DOI that is registered but whose publisher
   target is broken. The DOI stays in the BibTeX export.
 
@@ -69,6 +75,16 @@ rsvg-convert -w 180 -h 180 favicon.svg -o apple-touch-icon.png
 ```
 
 LinkedIn, Facebook and X do not render SVG preview images, which is why the PNG exists.
+
+Abstracts are in `publicationAbstracts`, keyed by entry id, as `[language, text]`. They are the
+abstracts deposited on HAL (`<lang>_abstract_s` in the API), in the language of the publication
+when HAL has one. The card shows them in a collapsed block and the search box matches them.
+
+## Linkable views
+
+Filters and the interface language are written to the query string, so a view can be shared:
+`?theme=Remote+Work`, `?type=book`, `?year=2024`, `?lang=de` (language of the publication),
+`?q=Reynaud`, `?hl=fr` (language of the interface). `applyUrlState()` reads them on load.
 
 Interface text is in the `translations` object (`en`, `fr`, `de`). Every user-visible string
 belongs there, not in the markup, except the fallback copy that ships in the HTML for crawlers
@@ -127,7 +143,10 @@ effort.
    resolves and, if it does not, work out whether the cause is a bot wall (fine for human
    visitors, leave it alone) or a dead target (set `doiResolves: false`).
 
-6. **Then update:** add the entry, add the sitemap line for the new PDF, and refresh
+6. **Abstract and page numbers.** Add the HAL abstract to `publicationAbstracts`, and set
+   `fullTextPages` after looking at the PDF.
+
+7. **Then update:** add the entry, add the sitemap line for the new PDF, and refresh
    `dateModified` in the JSON-LD blocks and `lastmod` in `sitemap.xml`. The visible counts need
    no edit, but the fallback numbers in the meta tags and static markup do.
 
