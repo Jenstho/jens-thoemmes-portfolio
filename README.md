@@ -13,7 +13,9 @@ served by GitHub Pages from the repository root.
 | `favicon.svg`, `favicon.png`, `apple-touch-icon.png` | Site icon. The PNGs are rendered from the SVG. |
 | `sitemap.xml` | The page plus every full-text PDF. No `#fragment` URLs: crawlers strip them. |
 | `robots.txt`, `CNAME` | Crawler rules, custom domain. |
-| `tools/render-static.js` | Regenerates the static copy of the publication list. See below. |
+| `tools/render-static.js` | Regenerates the static copy of the publication list, the pages under `p/` and their sitemap block. See below. |
+| `p/<slug>/index.html` | One page per publication. Generated, never edited by hand. |
+| `tools/author-names.json` | Full author names per entry, for the `citation_author` tags. |
 
 ## After changing publicationsData, run this
 
@@ -52,6 +54,19 @@ Fields used per entry:
   publisher file and is a manuscript. Check the printed numbers in the PDF.
 - `doiResolves: false`: suppresses the button for a DOI that is registered but whose publisher
   target is broken. The DOI stays in the BibTeX export.
+
+## One page per publication
+
+`tools/render-static.js` also writes `p/<slug>/index.html` for every entry, where the slug is
+the HAL id (or `book-1`, `pre-1` for the two entries without one). Each page carries the
+abstract, the links, the reference, the BibTeX entry, an RIS download and the `citation_*` meta
+tags that Google Scholar reads, including `citation_pdf_url` for the self-hosted PDF. Card
+titles on the main page link to these pages. The script deletes and rebuilds `p/` on every
+run and rewrites the block of `sitemap.xml` between its two markers.
+
+`citation_author` wants full names. They are in `tools/author-names.json`, taken from HAL and
+kept only where they match the entry's author string; an entry missing there falls back to
+initials. Add the names there when adding a publication.
 
 ## Citing
 
