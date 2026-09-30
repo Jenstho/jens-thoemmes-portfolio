@@ -30,7 +30,8 @@ const END = '<!-- END generated publication list -->';
 
 const html = fs.readFileSync(FILE, 'utf8');
 
-// Pull publicationsData and the English labels out of the inline script, without a DOM.
+// Pull publicationsData, the English labels and the citation helpers out of the inline
+// script, without a DOM.
 const scripts = [...html.matchAll(/<script(?![^>]*src=)(?![^>]*application\/ld\+json)[^>]*>([\s\S]*?)<\/script>/g)]
   .map(m => m[1]).join('\n;\n');
 const start = scripts.indexOf('const translations');
@@ -39,8 +40,9 @@ if (start === -1 || end === -1) {
   console.error('Could not locate the data block in index.html. Has the file been restructured?');
   process.exit(1);
 }
-const { translations, publicationsData } =
-  new Function(scripts.slice(start, end) + '; return { translations, publicationsData };')();
+const { translations, publicationsData, recordLabel, citeHtml } =
+  new Function(scripts.slice(start, end) +
+    '; return { translations, publicationsData, recordLabel, citeHtml };')();
 
 const all = Object.values(publicationsData).flat()
   .sort((a, b) => parseInt(b.year) - parseInt(a.year));
@@ -79,8 +81,8 @@ ${pub.authors ? `        <div class="publication-authors">${esc(pub.authors)}</d
 ${pub.editors ? `        <div style="margin-top: 0.5rem; font-style: italic; color: var(--text-tertiary); font-size: 0.875rem;">Edited by: ${esc(pub.editors)}</div>\n` : ''}${pub.tags && pub.tags.length ? `        <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
 ${pub.tags.map(tag => `          <span class="publication-tag">${esc(tag)}</span>`).join('\n')}
         </div>\n` : ''}        <div class="publication-actions">
-${pub.fullText ? `          <a href="${esc(pub.fullText)}" target="_blank" rel="noopener noreferrer" class="action-button action-button-primary">${esc(t.viewFullText)}</a>\n` : ''}${pub.doi && pub.doiResolves !== false && !pub.url.includes('ssrn.com') ? `          <a href="https://doi.org/${esc(pub.doi)}" target="_blank" rel="noopener noreferrer" class="action-button">${esc(t.viewPublished)}</a>\n` : ''}${pub.url ? `          <a href="${esc(pub.url)}" target="_blank" rel="noopener noreferrer" class="action-button">${esc(
-    pub.url.includes('ssrn.com') ? t.viewOnSSRN : pub.url.includes('.pdf') ? t.viewPDF : t.viewOnHAL)}</a>\n` : ''}        </div>
+${pub.fullText ? `          <a href="${esc(pub.fullText)}" target="_blank" rel="noopener noreferrer" class="action-button action-button-primary">${esc(t.viewFullText)}</a>\n` : ''}${pub.doi && pub.doiResolves !== false && !pub.url.includes('ssrn.com') ? `          <a href="https://doi.org/${esc(pub.doi)}" target="_blank" rel="noopener noreferrer" class="action-button">${esc(t.viewPublished)}</a>\n` : ''}${pub.url ? `          <a href="${esc(pub.url)}" target="_blank" rel="noopener noreferrer" class="action-button">${esc(recordLabel(pub, t))}</a>\n` : ''}        </div>
+        ${citeHtml(pub, t)}
       </div>`;
 
 const block = [BEGIN, ...all.map(card), END].join('\n');

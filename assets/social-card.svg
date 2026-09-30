@@ -23,12 +23,12 @@
 
   <!-- Title -->
   <text x="100" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="28" fill="rgba(255,255,255,0.9)">
-    CNRS Senior Research Director | Sociologist
+    Sociologist | CNRS Research Director
   </text>
 
   <!-- Affiliations -->
   <text x="100" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="rgba(255,255,255,0.75)">
-    CERTOP, Toulouse | Centre for Future of Work, Taylor's University Malaysia
+    UTOPI, Université Toulouse II | Centre for Future of Work, Taylor's University Malaysia
   </text>
 
   <!-- Divider line -->
@@ -52,9 +52,4 @@
     jens-thoemmes.com
   </text>
 
-  <!-- Publication count badge -->
-  <rect x="900" y="500" width="180" height="50" rx="25" fill="rgba(255,255,255,0.2)"/>
-  <text x="990" y="533" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="white" text-anchor="middle">
-    76 Publications
-  </text>
 </svg>

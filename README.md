@@ -1,6 +1,6 @@
 # jens-thoemmes.com
 
-Academic portfolio of Jens Thoemmes, CNRS senior researcher (UTOPI, UMR 5311). Static site
+Academic portfolio of Jens Thoemmes, CNRS research director (UTOPI, UMR 5311). Static site
 served by GitHub Pages from the repository root.
 
 ## Structure
@@ -9,8 +9,9 @@ served by GitHub Pages from the repository root.
 | --- | --- |
 | `index.html` | The entire site. Markup, CSS, publication data and logic in one file. |
 | `assets/fulltext/` | Self-hosted open-access PDFs, one per publication, named by HAL id. |
-| `assets/` | Social card image. |
-| `sitemap.xml` | Page anchors plus every full-text PDF. |
+| `assets/` | Social card image: `social-card.svg` is the source, `social-card.png` is what the meta tags reference. |
+| `favicon.svg`, `favicon.png`, `apple-touch-icon.png` | Site icon. The PNGs are rendered from the SVG. |
+| `sitemap.xml` | The page plus every full-text PDF. No `#fragment` URLs: crawlers strip them. |
 | `robots.txt`, `CNAME` | Crawler rules, custom domain. |
 | `tools/render-static.js` | Regenerates the static copy of the publication list. See below. |
 
@@ -39,10 +40,35 @@ Fields used per entry:
 
 - `url`: the HAL record. The archive of record.
 - `fullText`: local path under `assets/fulltext/`. Renders the primary "Full text (PDF)" button.
+- `url`, when it is not a HAL address: the button is labelled by target ("View on SSRN",
+  "View PDF", otherwise "Publisher's page"). See `recordLabel()`.
 - `doi`: bare DOI. Renders a "Published version" button linking to `https://doi.org/<doi>`,
   and is exported in BibTeX.
 - `doiResolves: false`: suppresses the button for a DOI that is registered but whose publisher
   target is broken. The DOI stays in the BibTeX export.
+
+## Citing
+
+Every card carries a "Cite" block: the full reference as plain text, a button that copies it,
+a button that copies the BibTeX entry and a button that downloads an RIS file. The block is a
+`<details>` element, so the reference can be opened and selected without JavaScript.
+
+The reference, the BibTeX entry and the RIS record are built from the entry's fields by
+`formatReference()`, `bibtexEntry()` and `risEntry()`, which sit between `publicationsData`
+and the `// Combine all publications` line. `tools/render-static.js` evaluates that stretch of
+the script, so the static cards and the runtime cards cannot differ. Keep `volume` in the form
+`17(2)`, `(22)` or `1`, and `authors` in the form `Surname, I., & Surname, I.`: the exporters
+parse both.
+
+## After editing the social card or the icon
+
+```sh
+rsvg-convert -w 1200 -h 630 assets/social-card.svg -o assets/social-card.png
+rsvg-convert -w 32 -h 32 favicon.svg -o favicon.png
+rsvg-convert -w 180 -h 180 favicon.svg -o apple-touch-icon.png
+```
+
+LinkedIn, Facebook and X do not render SVG preview images, which is why the PNG exists.
 
 Interface text is in the `translations` object (`en`, `fr`, `de`). Every user-visible string
 belongs there, not in the markup, except the fallback copy that ships in the HTML for crawlers
