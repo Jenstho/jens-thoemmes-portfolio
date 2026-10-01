@@ -219,9 +219,7 @@
       top: 0;
       width: 100%;
       background: var(--bg-main);
-      /* No backdrop-filter here: it makes .nav a containing block for fixed
-         descendants, which breaks the mobile .nav-controls panel. The nav
-         background is opaque, so a blur would have no visual effect anyway. */
+      /* No backdrop-filter: the nav background is opaque, so a blur would have no visual effect. */
       border-bottom: 1px solid var(--border);
       z-index: 1000;
       padding: 1rem 2rem;
@@ -611,6 +609,15 @@
       font-weight: 600;
     }
 
+    /* Safari draws its own disclosure triangle unless told not to */
+    .publication-cite summary {
+      list-style: none;
+    }
+
+    .publication-cite summary::-webkit-details-marker {
+      display: none;
+    }
+
     .publication-cite summary::before {
       content: "+ ";
     }
@@ -861,27 +868,20 @@
       .hero h1 { font-size: 2rem; }
       .hero .subtitle { font-size: 1.2rem; }
       .publication-header { flex-direction: column; gap: 0.5rem; }
-      .nav-container { flex-wrap: wrap; gap: 1rem; }
+      .hero { margin-top: 52px; }
       .filters-row { flex-direction: column; align-items: stretch; }
       .search-input { min-width: 100%; }
       .publication-card { padding: 1rem; }
       
-      /* Better mobile navigation */
-      .nav-controls {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        flex-direction: column;
-        background: var(--bg-main);
-        padding: 1rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px var(--shadow);
-        gap: 0.5rem;
-      }
-      
-      .nav-brand {
-        font-size: 1.2rem;
-      }
+      /* Language and dark mode stay in the top bar, made smaller, rather than
+         floating over the publication list */
+      .nav { padding: 0.5rem 1rem; }
+      .nav-container { gap: 0.5rem; }
+      .nav-controls { gap: 0.4rem; }
+      .lang-selector > span { display: none; }
+      .lang-selector select { padding: 0.3rem 0.4rem; font-size: 0.85rem; }
+      .theme-toggle { padding: 0.2rem 0.5rem; font-size: 1rem; }
+      .nav-brand { font-size: 1.1rem; white-space: nowrap; }
     }
   </style>
 </head>
