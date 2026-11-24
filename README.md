@@ -181,6 +181,17 @@ for f in assets/fulltext/*.pdf; do
 done
 ```
 
+A size difference alone does not mean the file changed. HAL rebuilds its cover page from the
+current record, and the PDF bytes drift by a few bytes even when no text changes: on 2026-11-24,
+68 of 78 files were flagged and only 4 differed in text, all on the cover page (a corrected
+title or author name). For each flagged file, download it and compare the text:
+
+```sh
+diff <(pdftotext assets/fulltext/<id>.pdf -) <(pdftotext <downloaded>.pdf -)
+```
+
+Replace the local copy only when the text differs.
+
 ## Rights
 
 The mirrored PDFs are HAL deposits. Depositing in an open archive does not by itself license
